@@ -1,0 +1,8 @@
+# Use this workspace to collaborate
+workspace:
+  id: 0173bcb1-3588-45ff-8396-a53e15ebe643
+
+localResources:
+  specs:
+    - ../Osta.API/obj/Debug/net8.0/EndpointInfo/Osta.API.json
+    - ../Osta.API/obj/Debug/net8.0/EndpointInfo/Osta.API_v2.json
