@@ -19,9 +19,9 @@ namespace Osta.Infrastructure.Implementation.ServiceImplemention
 
         public async Task<IEnumerable<Service>> GetAllWithCategoryAsync(CancellationToken cancellationToken)
         {
-            return await GetTableNoTracking(cancellationToken)
-          .Include(s => s.Category)
-          .ToListAsync(cancellationToken);
+            return await Service
+               .Include(s => s.Category)
+                .ToListAsync(cancellationToken);
         }
 
         public async Task<bool> DoesCategoryHaveServiceAsync(int CategoryId, CancellationToken cancellationToken)

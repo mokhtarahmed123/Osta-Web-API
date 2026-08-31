@@ -13,7 +13,7 @@ namespace Osta.Core.Feature.Technician.Command.Handler.TechnicianServiceAreaComm
         private readonly ILoggerService loggerService;
         private readonly ICurrentUserService currentUser;
 
-        public UpdateTechnicianServiceAreaCommandHandler(ITechnicianServiceAreasService technicianServiceAreasService, ILoggerService loggerService, ICurrentUserService currentUser) : base(technicianServiceAreasService, loggerService)
+        public UpdateTechnicianServiceAreaCommandHandler(ITechnicianServiceAreasService technicianServiceAreasService, ILoggerService loggerService, ICurrentUserService currentUser)
         {
             this.currentUser = currentUser;
             this.technicianServiceAreasService = technicianServiceAreasService;

@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Moq;
 using Osta.Booking.Interface;
 using Osta.Core.Feature.Review.Command.Handler;
@@ -15,7 +14,7 @@ namespace Osta.Test.ReviewTesting.ReviewCommandTesting
 {
     public class DeleteReviewCommandTesting
     {
-        private readonly Mock<IMapper> mapperMock;
+
         private readonly Mock<ICurrentUserService> currentUserServiceMock;
         private readonly Mock<IReviewService> reviewServiceMock;
         private readonly Mock<IBookingService> bookingServiceMock;
@@ -26,7 +25,7 @@ namespace Osta.Test.ReviewTesting.ReviewCommandTesting
 
         public DeleteReviewCommandTesting()
         {
-            mapperMock = new Mock<IMapper>();
+
             currentUserServiceMock = new Mock<ICurrentUserService>();
             reviewServiceMock = new Mock<IReviewService>();
             bookingServiceMock = new Mock<IBookingService>();
@@ -46,7 +45,7 @@ namespace Osta.Test.ReviewTesting.ReviewCommandTesting
                 null);
 
             handler = new DeleteReviewCommandHandler(
-                mapperMock.Object,
+
                 currentUserServiceMock.Object,
                 reviewServiceMock.Object,
                 bookingServiceMock.Object,

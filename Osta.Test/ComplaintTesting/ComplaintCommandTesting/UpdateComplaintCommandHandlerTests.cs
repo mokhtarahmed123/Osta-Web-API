@@ -1,41 +1,34 @@
-﻿
-using AutoMapper;
-using Moq;
-using Osta.Booking.Interface;
+﻿using Moq;
 using Osta.Core.Feature.Complaint.Command.Handler;
 using Osta.Core.Feature.Complaint.Command.Model;
 using Osta.Data.Entities.Booking;
 using Osta.Data.Enum;
 using Osta.Service.Abstract.AdministrationAbstract;
 using Osta.SharedKernel.Identity;
-using Osta.SharedKernel.Logging;
 
 namespace Osta.Test.ComplaintTesting.ComplaintCommandTesting
 {
     public class UpdateComplaintCommandHandlerTests
     {
-        private readonly Mock<IMapper> _mapperMock;
+
         private readonly Mock<ICurrentUserService> _currentUserServiceMock;
         private readonly Mock<IComplaintService> _complaintServiceMock;
-        private readonly Mock<IBookingService> _bookingServiceMock;
-        private readonly Mock<ILoggerService> _loggerServiceMock;
-
         private readonly UpdateComplaintCommandHandler _handler;
 
         public UpdateComplaintCommandHandlerTests()
         {
-            _mapperMock = new Mock<IMapper>();
+
             _currentUserServiceMock = new Mock<ICurrentUserService>();
             _complaintServiceMock = new Mock<IComplaintService>();
-            _bookingServiceMock = new Mock<IBookingService>();
-            _loggerServiceMock = new Mock<ILoggerService>();
+
 
             _handler = new UpdateComplaintCommandHandler(
-                _mapperMock.Object,
+
                 _currentUserServiceMock.Object,
-                _complaintServiceMock.Object,
-                _bookingServiceMock.Object,
-                _loggerServiceMock.Object);
+                _complaintServiceMock.Object
+
+
+                );
         }
 
         [Fact]

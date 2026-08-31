@@ -17,7 +17,7 @@ namespace Osta.Test.AppointmentTesting.AppointmentQueryTesting
     {
         private readonly Mock<IMapper> _mapperMock;
         private readonly Mock<IAppointmentService> _appointmentServiceMock;
-        private readonly Mock<UserManager<User>> _userManagerMock;
+
         private readonly Mock<ICurrentUserService> _currentUserServiceMock;
         private readonly Mock<IBookingService> _bookingServiceMock;
 
@@ -31,17 +31,6 @@ namespace Osta.Test.AppointmentTesting.AppointmentQueryTesting
 
             var userStore = new Mock<IUserStore<User>>();
 
-            _userManagerMock = new Mock<UserManager<User>>(
-                userStore.Object,
-                null!,
-                null!,
-                null!,
-                null!,
-                null!,
-                null!,
-                null!,
-                null!);
-
             _currentUserServiceMock = new Mock<ICurrentUserService>();
 
             _bookingServiceMock = new Mock<IBookingService>();
@@ -49,7 +38,7 @@ namespace Osta.Test.AppointmentTesting.AppointmentQueryTesting
             _handler = new GetAppointmentbyIdQueryHandler(
                 _mapperMock.Object,
                 _appointmentServiceMock.Object,
-                _userManagerMock.Object,
+
                 _currentUserServiceMock.Object,
                 _bookingServiceMock.Object);
         }

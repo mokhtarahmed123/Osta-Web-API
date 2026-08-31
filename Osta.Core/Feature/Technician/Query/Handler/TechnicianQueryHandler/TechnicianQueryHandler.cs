@@ -49,14 +49,19 @@ namespace Osta.Core.Feature.Technician.Query.Handler.TechnicianQueryHandler
             var serviceAreas = await technicianServiceAreasService.GetAllTechnicianServiceAreasAsync(cancellationToken);
             var result = mapper.Map<List<GetAllTechniciansResult>>(technicians);
 
-
             foreach (var technician in result)
             {
                 technician.TechnicianService =
-                    services.Where(x => x.TechnicianId == technician.Id).ToList();
+                    services
+                        .Where(x => x.TechnicianId == technician.Id)
+                        .Select(x => new TechnicianServiceResult(x.ServiceId))
+                        .ToList();
 
-                technician.TechnicianServiceArea =
-                    serviceAreas.Where(x => x.TechnicianId == technician.Id).ToList();
+                technician.ServiceArea =
+                    serviceAreas
+                        .Where(x => x.TechnicianId == technician.Id)
+                        .Select(x => new TechnicianServiceAreaResult(x.ServiceAreaId))
+                        .ToList();
             }
 
             return Success(result);
@@ -74,7 +79,6 @@ namespace Osta.Core.Feature.Technician.Query.Handler.TechnicianQueryHandler
                     e.Bio,
                     e.IsVerified,
                     e.Rating,
-
                     e.TotalReviews,
                     e.CompletedBookings,
                     e.YearsOfExperience,
@@ -110,9 +114,9 @@ namespace Osta.Core.Feature.Technician.Query.Handler.TechnicianQueryHandler
             var technicians = await technicianService.GetTechniciansByMinimumRateAsync(request.Rate);
             var result = mapper.Map<List<GetAllTechniciansWithRateResult>>(technicians);
             loggerService.LogInformation(
-     "{Count} technicians found with rating greater than or equal to {Rating}",
-     result.Count,
-     request.Rate);
+                     "{Count} technicians found with rating greater than or equal to {Rating}",
+             result.Count,
+                 request.Rate);
 
             return Success(result);
 

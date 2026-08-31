@@ -36,7 +36,7 @@ namespace Osta.Core.Feature.Service.Query.Handler
                 sw.ElapsedMilliseconds);
             var result = mapper.Map<List<GetAllServiceResult>>(Services);
             loggerService.LogInformation(" All Services retrieved successfully  ");
-            return Success<List<GetAllServiceResult>>(result, "Services retrieved successfully.");
+            return Success(result, "Services retrieved successfully.");
 
         }
 

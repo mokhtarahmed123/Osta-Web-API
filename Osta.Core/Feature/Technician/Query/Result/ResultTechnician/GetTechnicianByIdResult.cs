@@ -22,7 +22,7 @@ namespace Osta.Core.Feature.Technician.Query.Result.ResultTechnician
         public DateTime CreatedAt { get; set; }
         public string? ReasonOfReject { get; set; }
 
-        public required string Status { get; set; }
+        public string Status { get; set; }
 
         public List<GetServiceByIdResult>? Services { get; set; }
         public List<GetAllServiceAreasResult>? Areas { get; set; }

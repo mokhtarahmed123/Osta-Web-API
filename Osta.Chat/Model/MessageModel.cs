@@ -2,10 +2,10 @@
 {
     public class MessageModel
     {
-        public required int Id { get; set; }
-        public required int BookingId { get; set; }
-        public required string SenderId { get; set; }
-        public required string Content { get; set; }
+        public int Id { get; set; }
+        public int BookingId { get; set; }
+        public string SenderId { get; set; }
+        public string Content { get; set; }
         public DateTime SentAt { get; set; }
         public bool IsRead { get; set; }
 

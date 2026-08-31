@@ -16,7 +16,7 @@ namespace Osta.Test.ServiceAreaTesting.Command
         {
             // Arrange
             var mockServiceAreaService = new Mock<IServiceAreaService>();
-            var mockMapper = new Mock<IMapper>();
+
             var mockLogger = new Mock<ILoggerService>();
 
             var command = new DeleteServiceAreaCommand(1);
@@ -30,7 +30,7 @@ namespace Osta.Test.ServiceAreaTesting.Command
                 .Returns(Task.CompletedTask);
 
             var handler = new DeleteServiceAreaCommandHandler(
-                mockMapper.Object,
+
                 mockLogger.Object,
                 mockServiceAreaService.Object);
 
@@ -68,7 +68,7 @@ namespace Osta.Test.ServiceAreaTesting.Command
                 .ReturnsAsync((ServiceArea)null);
 
             var handler = new DeleteServiceAreaCommandHandler(
-                mockMapper.Object,
+
                 mockLogger.Object,
                 mockServiceAreaService.Object);
 
@@ -105,7 +105,7 @@ namespace Osta.Test.ServiceAreaTesting.Command
                 .ThrowsAsync(new Exception("Delete Error"));
 
             var handler = new DeleteServiceAreaCommandHandler(
-                mockMapper.Object,
+
                 mockLogger.Object,
                 mockServiceAreaService.Object);
 
@@ -138,7 +138,7 @@ namespace Osta.Test.ServiceAreaTesting.Command
                 .ThrowsAsync(new Exception("Database Error"));
 
             var handler = new DeleteServiceAreaCommandHandler(
-                mockMapper.Object,
+
                 mockLogger.Object,
                 mockServiceAreaService.Object);
 

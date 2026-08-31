@@ -19,7 +19,7 @@ namespace Osta.Test.CategoryTesting.Commands
 
             var mockCategoryService = new Mock<ICategoryService>();
 
-            var mockMapper = new Mock<IMapper>();
+
 
             var mockLogger = new Mock<ILoggerService>();
 
@@ -43,7 +43,7 @@ namespace Osta.Test.CategoryTesting.Commands
       .Setup(x => x.DeleteCategoryAsync(6, It.IsAny<CancellationToken>())).
       Returns(Task.CompletedTask);
 
-            var handler = new DeleteCategoryCommandHandler(mockMapper.Object, mockCategoryService.Object, mockLogger.Object, mockServiceService.Object);
+            var handler = new DeleteCategoryCommandHandler(mockCategoryService.Object, mockLogger.Object, mockServiceService.Object);
 
 
 
@@ -93,7 +93,7 @@ namespace Osta.Test.CategoryTesting.Commands
                     It.IsAny<int>(),
                     It.IsAny<CancellationToken>()))
                 .ThrowsAsync(new Exception("Delete failed"));
-            var handler = new DeleteCategoryCommandHandler(mockMapper.Object, mockCategoryService.Object, mockLogger.Object, mockServiceService.Object);
+            var handler = new DeleteCategoryCommandHandler(mockCategoryService.Object, mockLogger.Object, mockServiceService.Object);
 
 
 

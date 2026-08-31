@@ -19,7 +19,6 @@ namespace Osta.Test.TechnicianTesting.Command
         private readonly Mock<IMapper> _mapperMock;
         private readonly Mock<ITechnicianService> _technicianServiceMock;
         private readonly Mock<ILoggerService> _loggerMock;
-        private readonly Mock<ITechnicianServiceService> _technicianServiceServiceMock;
         private readonly Mock<ITechnicianServiceAreasService> _technicianServiceAreasServiceMock;
         private readonly Mock<ITechnicianImagesService> _technicianImagesMock;
         private readonly Mock<ICurrentUserService> _currentUserServiceMock;
@@ -31,27 +30,24 @@ namespace Osta.Test.TechnicianTesting.Command
             _mapperMock = new Mock<IMapper>();
             _technicianServiceMock = new Mock<ITechnicianService>();
             _loggerMock = new Mock<ILoggerService>();
-            _technicianServiceServiceMock = new Mock<ITechnicianServiceService>();
             _technicianServiceAreasServiceMock = new Mock<ITechnicianServiceAreasService>();
             _technicianImagesMock = new Mock<ITechnicianImagesService>();
             _currentUserServiceMock = new Mock<ICurrentUserService>();
 
-            _handler = new AddTechnicianCommandHandler(
+            _handler = new RequestTechnicianCommandHandler(
                 _mapperMock.Object,
                 _technicianServiceMock.Object,
                 _loggerMock.Object,
-                _technicianServiceServiceMock.Object,
                 _technicianServiceAreasServiceMock.Object, _technicianImagesMock.Object, _currentUserServiceMock.Object);
         }
 
-        // Remove all usage of 'command.Id' since 'AddTechnicianCommand' does not have an 'Id' property.
-        // Instead, use a generated technician id string for test purposes.
+
 
         [Fact]
         public async Task Handle_ShouldReturnCreated_WhenTechnicianAddedSuccessfully()
         {
             // Arrange
-            var technicianId = "tech1"; // Use a local variable for the technician id
+            var technicianId = "tech1";
             var command = new AddTechnicianCommand
             {
                 Bio = "Backend Developer",

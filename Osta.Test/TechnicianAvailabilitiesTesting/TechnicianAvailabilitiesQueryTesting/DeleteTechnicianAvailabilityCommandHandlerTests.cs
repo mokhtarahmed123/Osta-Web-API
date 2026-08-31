@@ -1,6 +1,4 @@
-﻿
-using AutoMapper;
-using Moq;
+﻿using Moq;
 using Osta.Core.Feature.Technician.Command.Handler.TechnicianAvailabilitiesCommandHandler;
 using Osta.Core.Feature.Technician.Command.Model.ModelTechnicianAvailabilities;
 using Osta.Data.Entities.Technician;
@@ -12,7 +10,7 @@ namespace Osta.Test.TechnicianAvailabilitiesTesting.TechnicianAvailabilitiesQuer
 {
     public class DeleteTechnicianAvailabilityCommandHandlerTests
     {
-        private readonly Mock<IMapper> _mapperMock;
+
         private readonly Mock<ILoggerService> _loggerMock;
         private readonly Mock<ITechnicianAvailabilityService> _availabilityServiceMock;
         private readonly Mock<ICurrentUserService> _currentUserMock;
@@ -21,7 +19,7 @@ namespace Osta.Test.TechnicianAvailabilitiesTesting.TechnicianAvailabilitiesQuer
 
         public DeleteTechnicianAvailabilityCommandHandlerTests()
         {
-            _mapperMock = new Mock<IMapper>();
+
             _loggerMock = new Mock<ILoggerService>();
             _availabilityServiceMock = new Mock<ITechnicianAvailabilityService>();
             _currentUserMock = new Mock<ICurrentUserService>();
@@ -31,7 +29,7 @@ namespace Osta.Test.TechnicianAvailabilitiesTesting.TechnicianAvailabilitiesQuer
                 .Returns("tech-123");
 
             _handler = new DeleteTechnicianAvailabilityCommandHandler(
-                _mapperMock.Object,
+
                 _loggerMock.Object,
                 _availabilityServiceMock.Object,
                 _currentUserMock.Object);

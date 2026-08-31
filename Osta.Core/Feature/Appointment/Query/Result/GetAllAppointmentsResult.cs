@@ -2,7 +2,7 @@
 {
     public record GetAllAppointmentsResult
     {
-        public required string Id { get; set; }
+        public string Id { get; set; }
         public DateTime ScheduledStart { get; set; }
         public DateTime ScheduledEnd { get; set; }
         public string? Notes { get; set; }

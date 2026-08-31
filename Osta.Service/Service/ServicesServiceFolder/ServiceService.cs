@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Osta.Data.Entities.Services;
 using Osta.Infrastructure.Abstract.ServicesAbstract;
 using Osta.Infrastructure.Caching;
 using Osta.Infrastructure.InfrastructureBases;
 using Osta.Service.Abstract.ServicesAbstract;
 using Osta.Service.Abstract.TechnicianAbstract;
+using Osta.Service.Model;
 using Osta.SharedKernel;
 using Osta.SharedKernel.Logging;
 using System.Diagnostics;
@@ -100,20 +103,36 @@ namespace Osta.Service.Service.ServicesServiceFolder
 
         }
 
-        public async Task<IEnumerable<Service>> GetAllServicesAsync(CancellationToken ct = default)
+        public async Task<IEnumerable<Service>> GetAllServicesAsync(
+    CancellationToken ct = default)
         {
             var cachedServices =
-                await cacheService.GetDataAsync<List<Service>>(ServicesCacheKey);
+                await cacheService.GetDataAsync<List<ServiceCacheDto>>(ServicesCacheKey);
 
             if (cachedServices is not null)
             {
                 loggerService.LogInformation("Services loaded from cache.");
-                return cachedServices;
+
+                return cachedServices.Select(x => new Service
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Price = x.Price,
+                    CategoryId = x.CategoryId,
+                    Category = new Category
+                    {
+                        Id = x.CategoryId,
+                        Name = x.CategoryName
+                    }
+                }).ToList();
             }
 
             var sw = Stopwatch.StartNew();
 
-            var services = (await serviceRepository.GetAllWithCategoryAsync(ct)).ToList();
+            var services = await serviceRepository
+                .GetTableNoTracking(ct)
+                .Include(x => x.Category)
+                .ToListAsync(ct);
 
             sw.Stop();
 
@@ -121,9 +140,20 @@ namespace Osta.Service.Service.ServicesServiceFolder
                 "Database took {Elapsed} ms",
                 sw.ElapsedMilliseconds);
 
+            var cacheData = services.Select(x => new ServiceCacheDto
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Price = x.Price,
+                IsActive = x.IsActive,
+                ImageUrl = x.ImageUrl,
+                CategoryId = x.CategoryId,
+                CategoryName = x.Category?.Name
+            }).ToList();
+
             await cacheService.SetDataAsync(
                 ServicesCacheKey,
-                services,
+                cacheData,
                 TimeSpan.FromMinutes(30));
 
             loggerService.LogInformation("Services cached successfully.");

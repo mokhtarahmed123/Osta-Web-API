@@ -1,4 +1,4 @@
-﻿.using AutoMapper;
+﻿using AutoMapper;
 using MediatR;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Technician.Query.Model.ModelTechnicianService;

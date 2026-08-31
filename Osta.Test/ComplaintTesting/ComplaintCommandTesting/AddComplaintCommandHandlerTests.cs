@@ -8,7 +8,6 @@ using Osta.Data.Entities.Booking;
 using Osta.Data.Enum;
 using Osta.Service.Abstract.AdministrationAbstract;
 using Osta.SharedKernel.Identity;
-using Osta.SharedKernel.Logging;
 
 namespace Osta.Test.ComplaintTesting.ComplaintCommandTesting
 {
@@ -18,7 +17,7 @@ namespace Osta.Test.ComplaintTesting.ComplaintCommandTesting
         private readonly Mock<ICurrentUserService> _currentUserServiceMock;
         private readonly Mock<IComplaintService> _complaintServiceMock;
         private readonly Mock<IBookingService> _bookingServiceMock;
-        private readonly Mock<ILoggerService> _loggerServiceMock;
+
 
         private readonly AddComplaintCommandHandler _handler;
 
@@ -28,14 +27,14 @@ namespace Osta.Test.ComplaintTesting.ComplaintCommandTesting
             _currentUserServiceMock = new Mock<ICurrentUserService>();
             _complaintServiceMock = new Mock<IComplaintService>();
             _bookingServiceMock = new Mock<IBookingService>();
-            _loggerServiceMock = new Mock<ILoggerService>();
+
 
             _handler = new AddComplaintCommandHandler(
                 _mapperMock.Object,
                 _currentUserServiceMock.Object,
                 _complaintServiceMock.Object,
-                _bookingServiceMock.Object,
-                _loggerServiceMock.Object);
+                _bookingServiceMock.Object
+             );
         }
 
         [Fact]

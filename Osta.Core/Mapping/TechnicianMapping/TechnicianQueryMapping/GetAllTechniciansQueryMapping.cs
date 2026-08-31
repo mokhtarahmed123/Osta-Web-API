@@ -18,7 +18,7 @@ namespace Osta.Core.Mapping.TechnicianMapping
                 ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreatedAt)).
                 ForMember(dest => dest.ReasonOfReject, opt => opt.MapFrom(src => src.ReasonOfReject)).
                 ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status)).
-                ForMember(dest => dest.TechnicianServiceArea, opt => opt.Ignore()).
+                ForMember(dest => dest.ServiceArea, opt => opt.Ignore()).
                 ForMember(dest => dest.TechnicianService, opt => opt.Ignore());
         }
 

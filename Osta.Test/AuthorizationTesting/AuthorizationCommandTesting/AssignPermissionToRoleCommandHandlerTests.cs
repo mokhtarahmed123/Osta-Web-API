@@ -10,7 +10,7 @@ namespace Osta.Test.AuthorizationTesting.AuthorizationCommandTesting
 {
     public class AssignPermissionToRoleCommandHandlerTests
     {
-        private readonly Mock<UserManager<User>> _userManagerMock;
+
         private readonly Mock<RoleManager<Role>> _roleManagerMock;
         private readonly Mock<IAuthorizationService> _authorizationServiceMock;
 
@@ -18,9 +18,6 @@ namespace Osta.Test.AuthorizationTesting.AuthorizationCommandTesting
 
         public AssignPermissionToRoleCommandHandlerTests()
         {
-            _userManagerMock = new Mock<UserManager<User>>(
-                Mock.Of<IUserStore<User>>(),
-                null!, null!, null!, null!, null!, null!, null!, null!);
 
             _roleManagerMock = new Mock<RoleManager<Role>>(
                 Mock.Of<IRoleStore<Role>>(),
@@ -29,7 +26,7 @@ namespace Osta.Test.AuthorizationTesting.AuthorizationCommandTesting
             _authorizationServiceMock = new Mock<IAuthorizationService>();
 
             _handler = new AssignPermissionToRoleCommandHandler(
-                _userManagerMock.Object,
+
                 _roleManagerMock.Object,
                 _authorizationServiceMock.Object);
         }

@@ -5,7 +5,6 @@ using Osta.Core.Feature.Review.Query.Model;
 using Osta.Core.Feature.Review.Query.Result;
 using Osta.Data.Entities;
 using Osta.Service.Abstract.ReviewAbstract;
-using Osta.SharedKernel.Identity;
 using System.Net;
 
 namespace Osta.Test.ReviewTesting.ReviewQueryTesting
@@ -13,7 +12,7 @@ namespace Osta.Test.ReviewTesting.ReviewQueryTesting
     public class GetAllReviewsQueryTesting
     {
         private readonly Mock<IMapper> mapperMock;
-        private readonly Mock<ICurrentUserService> currentUserServiceMock;
+
         private readonly Mock<IReviewService> reviewServiceMock;
 
         private readonly GetAllReviewsQueryHandler handler;
@@ -21,13 +20,13 @@ namespace Osta.Test.ReviewTesting.ReviewQueryTesting
         public GetAllReviewsQueryTesting()
         {
             mapperMock = new Mock<IMapper>();
-            currentUserServiceMock = new Mock<ICurrentUserService>();
+
             reviewServiceMock = new Mock<IReviewService>();
 
             handler = new GetAllReviewsQueryHandler(
                 reviewServiceMock.Object,
-                mapperMock.Object,
-                currentUserServiceMock.Object
+                mapperMock.Object
+
             );
         }
         [Fact]

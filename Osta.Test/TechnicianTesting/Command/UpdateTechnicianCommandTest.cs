@@ -14,7 +14,7 @@ namespace Osta.Test.TechnicianTesting.Command
         private readonly Mock<IMapper> _mapperMock;
         private readonly Mock<ITechnicianService> _technicianServiceMock;
         private readonly Mock<ILoggerService> _loggerMock;
-        private readonly Mock<ITechnicianServiceService> _technicianServiceServiceMock;
+
         private readonly Mock<ITechnicianServiceAreasService> _technicianServiceAreasServiceMock;
         private readonly Mock<ITechnicianImagesService> _technicianImagesServiceMock;
         private readonly Mock<ICurrentUserService> _currentUserServiceMock;
@@ -26,7 +26,7 @@ namespace Osta.Test.TechnicianTesting.Command
             _mapperMock = new Mock<IMapper>();
             _technicianServiceMock = new Mock<ITechnicianService>();
             _loggerMock = new Mock<ILoggerService>();
-            _technicianServiceServiceMock = new Mock<ITechnicianServiceService>();
+
             _technicianServiceAreasServiceMock = new Mock<ITechnicianServiceAreasService>();
             _technicianImagesServiceMock = new Mock<ITechnicianImagesService>();
             _currentUserServiceMock = new Mock<ICurrentUserService>();
@@ -40,7 +40,7 @@ namespace Osta.Test.TechnicianTesting.Command
                 _mapperMock.Object,
                 _technicianServiceMock.Object,
                 _loggerMock.Object,
-                _technicianServiceServiceMock.Object,
+
                 _technicianServiceAreasServiceMock.Object,
                 _technicianImagesServiceMock.Object,
                 _currentUserServiceMock.Object

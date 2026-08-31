@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Moq;
 using Osta.Core.Feature.Technician.Command.Handler.TechnicianCommandHandler;
 using Osta.Core.Feature.Technician.Command.Model.TechnicianModel;
@@ -16,12 +15,9 @@ namespace Osta.Test.TechnicianTesting.Command
 {
     public class RejectTechnicianCommandTest
     {
-        private readonly Mock<IMapper> _mapperMock;
         private readonly Mock<ITechnicianService> _technicianServiceMock;
         private readonly Mock<ILoggerService> _loggerMock;
-        private readonly Mock<ITechnicianServiceService> _technicianServiceServiceMock;
-        private readonly Mock<ITechnicianServiceAreasService> _technicianServiceAreasServiceMock;
-        private readonly Mock<ITechnicianImagesService> _technicianImagesServiceMock;
+
         private readonly Mock<UserManager<User>> _userManagerMock;
         private readonly Mock<ISendNotificationMessage> _sendNotificationMessageMock;
         private readonly Mock<ICurrentUserService> _currentUserServiceMock;
@@ -30,12 +26,9 @@ namespace Osta.Test.TechnicianTesting.Command
 
         public RejectTechnicianCommandTest()
         {
-            _mapperMock = new Mock<IMapper>();
             _technicianServiceMock = new Mock<ITechnicianService>();
             _loggerMock = new Mock<ILoggerService>();
-            _technicianServiceServiceMock = new Mock<ITechnicianServiceService>();
-            _technicianServiceAreasServiceMock = new Mock<ITechnicianServiceAreasService>();
-            _technicianImagesServiceMock = new Mock<ITechnicianImagesService>();
+
             _userManagerMock = new Mock<UserManager<User>>(
                 Mock.Of<IUserStore<User>>(),
                 null,
@@ -52,15 +45,13 @@ namespace Osta.Test.TechnicianTesting.Command
             _currentUserServiceMock = new Mock<ICurrentUserService>();
 
             _handler = new RejectTechnicianCommandHandler(
-                _mapperMock.Object,
+
                 _technicianServiceMock.Object,
                 _loggerMock.Object,
-                _technicianServiceServiceMock.Object,
-                _technicianServiceAreasServiceMock.Object,
-                _technicianImagesServiceMock.Object,
+
                 _userManagerMock.Object,
-                _sendNotificationMessageMock.Object,
-                _currentUserServiceMock.Object
+                    _sendNotificationMessageMock.Object
+
             );
         }
         [Fact]

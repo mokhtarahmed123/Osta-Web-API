@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Moq;
 using Osta.Booking.Interface;
 using Osta.Core.Feature.Review.Command.Handler;
@@ -8,29 +7,27 @@ using Osta.Data.Entities;
 using Osta.Data.Entities.Booking;
 using Osta.Data.Entities.Identity;
 using Osta.Service.Abstract.ReviewAbstract;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Test.ReviewTesting.ReviewCommandTesting
 {
     public class UpdateReviewCommandTesting
     {
-        private readonly Mock<IMapper> mapperMock;
+
         private readonly Mock<ICurrentUserService> currentUserServiceMock;
         private readonly Mock<IReviewService> reviewServiceMock;
         private readonly Mock<IBookingService> bookingServiceMock;
-        private readonly Mock<ITechnicianService> technicianServiceMock;
         private readonly Mock<UserManager<User>> userManagerMock;
 
         private readonly UpdateReviewCommandHandler handler;
 
         public UpdateReviewCommandTesting()
         {
-            mapperMock = new Mock<IMapper>();
+
             currentUserServiceMock = new Mock<ICurrentUserService>();
             reviewServiceMock = new Mock<IReviewService>();
             bookingServiceMock = new Mock<IBookingService>();
-            technicianServiceMock = new Mock<ITechnicianService>();
+
 
             var userStoreMock = new Mock<IUserStore<User>>();
 
@@ -46,12 +43,12 @@ namespace Osta.Test.ReviewTesting.ReviewCommandTesting
                 null);
 
             handler = new UpdateReviewCommandHandler(
-                mapperMock.Object,
+
                 currentUserServiceMock.Object,
                 reviewServiceMock.Object,
                 bookingServiceMock.Object,
-                userManagerMock.Object,
-                technicianServiceMock.Object);
+                userManagerMock.Object
+                );
         }
 
 

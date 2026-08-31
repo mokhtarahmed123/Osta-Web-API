@@ -15,7 +15,6 @@ namespace Osta.Core.Feature.Technician.Command.Handler.TechnicianCommandHandler
         private readonly IMapper mapper;
         private readonly ITechnicianService technicianService;
         private readonly ILoggerService loggerService;
-
         private readonly ITechnicianServiceAreasService technicianServiceAreasService;
         private readonly ITechnicianImagesService technicianImagesService;
         private readonly ICurrentUserService currentUser;

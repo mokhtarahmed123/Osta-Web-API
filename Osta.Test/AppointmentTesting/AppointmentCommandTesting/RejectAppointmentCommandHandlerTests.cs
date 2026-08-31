@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Moq;
 using Osta.Booking.Interface;
 using Osta.Core.Feature.Appointment.Command.Handler;
@@ -15,7 +14,7 @@ namespace Osta.Test.AppointmentTesting.AppointmentCommandTesting
 {
     public class RejectAppointmentCommandHandlerTests
     {
-        private readonly Mock<IMapper> _mapperMock;
+
         private readonly Mock<IAppointmentService> _appointmentServiceMock;
         private readonly Mock<UserManager<User>> _userManagerMock;
         private readonly Mock<ICurrentUserService> _currentUserServiceMock;
@@ -26,7 +25,7 @@ namespace Osta.Test.AppointmentTesting.AppointmentCommandTesting
 
         public RejectAppointmentCommandHandlerTests()
         {
-            _mapperMock = new Mock<IMapper>();
+
 
             _appointmentServiceMock =
                 new Mock<IAppointmentService>();
@@ -55,7 +54,7 @@ namespace Osta.Test.AppointmentTesting.AppointmentCommandTesting
                     null);
 
             _handler = new RejectAppointmentCommandHandler(
-                _mapperMock.Object,
+
                 _appointmentServiceMock.Object,
                 _userManagerMock.Object,
                 _currentUserServiceMock.Object,

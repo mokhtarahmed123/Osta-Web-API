@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Moq;
 using Osta.Booking.Interface;
 using Osta.Core.Feature.Appointment.Command.Handler;
@@ -13,7 +12,7 @@ using Osta.SharedKernel.Identity;
 
 public class ApproveAppointmentCommandHandlerTests
 {
-    private readonly Mock<IMapper> _mapperMock;
+
     private readonly Mock<IAppointmentService> _appointmentServiceMock;
     private readonly Mock<UserManager<User>> _userManagerMock;
     private readonly Mock<ICurrentUserService> _currentUserServiceMock;
@@ -24,7 +23,7 @@ public class ApproveAppointmentCommandHandlerTests
 
     public ApproveAppointmentCommandHandlerTests()
     {
-        _mapperMock = new Mock<IMapper>();
+
         _appointmentServiceMock = new Mock<IAppointmentService>();
         _currentUserServiceMock = new Mock<ICurrentUserService>();
         _bookingServiceMock = new Mock<IBookingService>();
@@ -44,7 +43,7 @@ public class ApproveAppointmentCommandHandlerTests
             null);
 
         _handler = new ApproveAppointmentCommandHandler(
-            _mapperMock.Object,
+
             _appointmentServiceMock.Object,
             _userManagerMock.Object,
             _currentUserServiceMock.Object,

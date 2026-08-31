@@ -8,27 +8,19 @@ namespace Osta.Test.AuthorizationTesting.AuthorizationCommandTesting
 {
     public class RemovePermissionFromRoleCommandHandlerTests
     {
-        private readonly Mock<Microsoft.AspNetCore.Identity.UserManager<Data.Entities.Identity.User>> _userManagerMock;
-        private readonly Mock<Microsoft.AspNetCore.Identity.RoleManager<Data.Entities.Identity.Role>> _roleManagerMock;
+
         private readonly Mock<IAuthorizationService> _authorizationServiceMock;
 
         private readonly RemovePermissionFromRoleCommandHandler _handler;
 
         public RemovePermissionFromRoleCommandHandlerTests()
         {
-            _userManagerMock = new Mock<Microsoft.AspNetCore.Identity.UserManager<Data.Entities.Identity.User>>(
-                Mock.Of<Microsoft.AspNetCore.Identity.IUserStore<Data.Entities.Identity.User>>(),
-                null!, null!, null!, null!, null!, null!, null!, null!);
 
-            _roleManagerMock = new Mock<Microsoft.AspNetCore.Identity.RoleManager<Data.Entities.Identity.Role>>(
-                Mock.Of<Microsoft.AspNetCore.Identity.IRoleStore<Data.Entities.Identity.Role>>(),
-                null!, null!, null!, null!);
 
             _authorizationServiceMock = new Mock<IAuthorizationService>();
 
             _handler = new RemovePermissionFromRoleCommandHandler(
-                _userManagerMock.Object,
-                _roleManagerMock.Object,
+
                 _authorizationServiceMock.Object);
         }
 

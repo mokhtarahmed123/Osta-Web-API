@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Moq;
+﻿using Moq;
 using Osta.Core.Feature.Service.Command.Handler;
 using Osta.Core.Feature.Service.Command.Model;
 using Osta.Service.Abstract.ServicesAbstract;
@@ -9,20 +8,20 @@ namespace Osta.Test.ServiceTesting.Command
 {
     public class DeleteServiceCommandTest
     {
-        private readonly Mock<IMapper> _mapperMock;
+
         private readonly Mock<IServiceService> _serviceMock;
         private readonly Mock<ILoggerService> _loggerMock;
         private readonly DeleteServiceCommandHandler _handler;
 
         public DeleteServiceCommandTest()
         {
-            _mapperMock = new Mock<IMapper>();
+
             _serviceMock = new Mock<IServiceService>();
             _loggerMock = new Mock<ILoggerService>();
 
             _handler = new DeleteServiceCommandHandler(
-                _mapperMock.Object,
-                _serviceMock.Object,
+
+                    _serviceMock.Object,
                 _loggerMock.Object);
         }
 

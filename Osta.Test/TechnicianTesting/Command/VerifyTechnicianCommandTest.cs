@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Moq;
 using Osta.Core.Feature.Technician.Command.Handler.TechnicianCommandHandler;
 using Osta.Core.Feature.Technician.Command.Model.TechnicianModel;
@@ -17,12 +16,10 @@ namespace Osta.Test.TechnicianTesting.Command
 {
     public class VerifyTechnicianCommandTest
     {
-        private readonly Mock<IMapper> _mapperMock;
+
         private readonly Mock<ITechnicianService> _technicianServiceMock;
         private readonly Mock<ILoggerService> _loggerMock;
-        private readonly Mock<ITechnicianServiceService> _technicianServiceServiceMock;
-        private readonly Mock<ITechnicianServiceAreasService> _technicianServiceAreasServiceMock;
-        private readonly Mock<ITechnicianImagesService> _technicianImageServiceMock;
+
         private readonly Mock<ISendNotificationMessage> _sendNotificationMessageMock;
         private readonly Mock<UserManager<User>> _userManagerMock;
         private readonly Mock<ICurrentUserService> _currentUserServiceMock;
@@ -32,12 +29,8 @@ namespace Osta.Test.TechnicianTesting.Command
 
         public VerifyTechnicianCommandTest()
         {
-            _mapperMock = new Mock<IMapper>();
             _technicianServiceMock = new Mock<ITechnicianService>();
             _loggerMock = new Mock<ILoggerService>();
-            _technicianServiceServiceMock = new Mock<ITechnicianServiceService>();
-            _technicianServiceAreasServiceMock = new Mock<ITechnicianServiceAreasService>();
-            _technicianImageServiceMock = new Mock<ITechnicianImagesService>();
             _sendNotificationMessageMock = new Mock<ISendNotificationMessage>();
             _currentUserServiceMock = new Mock<ICurrentUserService>();
             _technicianWalletServiceMock = new Mock<ITechnicianWalletService>();
@@ -55,15 +48,13 @@ namespace Osta.Test.TechnicianTesting.Command
             );
 
             _handler = new VerifyTechnicianCommandHandler(
-                _mapperMock.Object,
+
                 _technicianServiceMock.Object,
                 _loggerMock.Object,
-                _technicianServiceServiceMock.Object,
-                _technicianServiceAreasServiceMock.Object,
-                _technicianImageServiceMock.Object,
+
                 _sendNotificationMessageMock.Object,
                 _userManagerMock.Object,
-                _currentUserServiceMock.Object,
+
                 _technicianWalletServiceMock.Object
             );
         }

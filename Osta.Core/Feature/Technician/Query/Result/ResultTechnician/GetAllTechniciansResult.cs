@@ -25,8 +25,11 @@ namespace Osta.Core.Feature.Technician.Query.Result.ResultTechnician
 
         public StatusOfTechnicianRequestEnum Status { get; set; }
 
-        public ICollection<Data.Entities.Technician.TechnicianServiceArea> TechnicianServiceArea { get; set; }
-        public ICollection<Data.Entities.Technician.TechnicianService> TechnicianService { get; set; }
+        public ICollection<TechnicianServiceAreaResult> ServiceArea { get; set; } = new List<TechnicianServiceAreaResult>();
+        public ICollection<TechnicianServiceResult> TechnicianService { get; set; } = new List<TechnicianServiceResult>();
 
     }
+
+    public record TechnicianServiceAreaResult(int ServiceAreaId);
+    public record TechnicianServiceResult(int ServiceId);
 }
