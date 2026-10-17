@@ -1,0 +1,77 @@
+## ===== Secrets / Environment (المهم جداً) =====
+**/appsettings.Development.json
+**/appsettings.Production.json
+**/appsettings.Local.json
+**/appsettings.Staging.json
+**/secrets.json
+**/*.secrets.json
+.env
+.env.local
+.env.*.local
+
+## ===== .NET Build Output =====
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+## ===== Visual Studio =====
+.vs/
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+
+## ===== Rider / IntelliJ =====
+.idea/
+*.sln.iml
+
+## ===== VS Code =====
+.vscode/
+*.code-workspace
+
+## ===== Test Results =====
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+*.coverage
+*.coveragexml
+
+## ===== NuGet =====
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+
+## ===== Logs =====
+*.log
+logs/
+Logs/
+
+## ===== Docker (keep docker-compose.yml, ignore overrides with real secrets) =====
+docker-compose.override.yml
+.docker/
+
+## ===== OS files =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+## ===== Database =====
+*.mdf
+*.ldf
+*.ndf
+
+## ===== Postman (keep collection, ignore local environment with secrets) =====
+.postman/*.postman_environment.json
+
+## ===== Qodana (analysis cache, keep qodana.yaml) =====
+.qodana/
+
+## ===== Misc =====
+*.DotSettings.user

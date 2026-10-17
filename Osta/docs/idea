@@ -1,0 +1,108 @@
+# 🔧 Osta Plus
+### *"Book a Technician, Not a Headache"*
+
+---
+
+## The Problem
+
+In Egypt, if you have a plumbing or electrical issue at 11 PM, what do you do?
+
+You scroll through Facebook groups, call a stranger, wait for hours, and have no idea if a real professional is going to show up. No ratings, no guarantees, no price transparency.
+
+## The Solution
+
+**Osta Plus** is a platform that connects customers with **verified, rated** professional technicians — think *Uber, but for home services*.
+
+---
+
+## 🎯 User Journey
+
+```
+Customer opens the app
+        │
+        ▼
+Searches for a "plumber" in their area
+        │
+        ▼
+Views the technician's profile: rating, experience, offered services
+        │
+        ▼
+Books an appointment
+   (the system checks the technician is actually free at that time)
+        │
+        ▼
+Pays securely online (Stripe)
+   — optionally applying a discount coupon
+        │
+        ▼
+Technician completes the job
+        │
+        ▼
+Customer rates and reviews
+        │
+        ▼
+Technician earns money and can withdraw it to their wallet
+```
+
+---
+
+## 💡 What Sets Osta Plus Apart
+
+| Feature | Why It Matters |
+|---|---|
+| ✅ **Verified technicians** | Admins review and verify every technician before they're visible to customers |
+| 💳 **Secure payments + coupons** | Real Stripe integration, not just "cash on delivery" |
+| 🗓️ **Appointment overlap prevention** | A technician can't accidentally double-book the same time slot — the system enforces it |
+| 💰 **Transparent earnings system** | Technicians see exactly what they've earned and can request a payout through their preferred method |
+| 💬 **Real-time chat** | Customers and technicians can coordinate details before the technician arrives |
+| ⭐ **Genuine reviews** | Only customers who actually completed a booking can leave a review |
+
+---
+
+## 🏗️ Technical Highlights
+
+Built on **real Clean Architecture** — not just a buzzword, an actual layered solution:
+
+```
+Osta.API
+   │
+   ▼
+Osta.Core (composition root)
+   │
+   ├── Osta.Service
+   ├── Osta.Booking
+   ├── Osta.Payment
+   └── Osta.Notification
+   │
+   ▼
+Osta.Infrastructure
+   │
+   ▼
+Osta.Identity
+   │
+   ▼
+Osta.Domain
+   │
+   ▼
+Osta.SharedKernel
+```
+
+| Technology | Role |
+|---|---|
+| **CQRS + MediatR** | Every action is a Command or Query with its own handler and validator |
+| **Stripe** | Payment Intents, webhook-driven status confirmation, refunds |
+| **RabbitMQ** | Asynchronous notification delivery (e.g. payout-completed emails) |
+| **Hangfire** | Scheduled background jobs (appointment reminders) |
+| **SignalR** | Real-time chat delivery |
+| **Redis** | Caching for high-read endpoints (Categories/Services) |
+| **JWT + RBAC** | Secured with fine-grained permissions, plus Google OAuth login |
+
+---
+
+## 🚀 The Pitch in One Line
+
+> **Osta Plus turns "does anyone know a good plumber?" into a two-minute, secure, trackable booking — for both the customer's peace of mind and the technician's livelihood.**
+
+---
+
+<p align="center"><i>Osta Plus — Home Services Marketplace Platform</i></p>

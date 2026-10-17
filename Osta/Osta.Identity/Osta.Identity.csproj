@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.Auth" Version="1.76.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.14" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Osta.Data\Osta.Domain.csproj" />
+    <ProjectReference Include="..\Osta.Infrastructure\Osta.Infrastructure.csproj" />
+    <ProjectReference Include="..\Osta.Notification\Osta.Notification.csproj" />
+    <ProjectReference Include="..\Osta.SharedKernel\Osta.SharedKernel.csproj" />
+  </ItemGroup>
+
+</Project>

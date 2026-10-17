@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Osta.BackgroundJobs\Osta.BackgroundJobs.csproj" />
+    <ProjectReference Include="..\Osta.Booking\Osta.Booking.csproj" />
+    <ProjectReference Include="..\Osta.Chat\Osta.Chat.csproj" />
+    <ProjectReference Include="..\Osta.Data\Osta.Domain.csproj" />
+    <ProjectReference Include="..\Osta.Identity\Osta.Identity.csproj" />
+    <ProjectReference Include="..\Osta.Infrastructure\Osta.Infrastructure.csproj" />
+    <ProjectReference Include="..\Osta.Payment\Osta.Payment.csproj" />
+    <ProjectReference Include="..\Osta.Service\Osta.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Feature\Authentication\Query\Result\" />
+    <Folder Include="Feature\Authorization\Query\Result\" />
+    <Folder Include="Feature\Emails\Query\Result\" />
+    <Folder Include="Feature\Service\Query\Validation\" />
+    <Folder Include="Mapping\AuthMapping\AuthQueryMapping\" />
+    <Folder Include="Mapping\TechnicianServiceAreaMapping\TechnicianServiceAreaQueryMapping\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="16.2.0" />
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
+    <PackageReference Include="MediatR" Version="14.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.11" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="10.0.9" />
+  </ItemGroup>
+
+</Project>
