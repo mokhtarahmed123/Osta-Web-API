@@ -36,11 +36,7 @@ namespace Osta.Booking.Service
             }
         }
 
-<<<<<<< HEAD
-        public async Task CancelBooking(int id, CancellationToken ct = default) // 
-=======
         public async Task CancelBooking(int id, CancellationToken ct = default)
->>>>>>> c73a0b6 (Initial commit)
         {
             try
             {

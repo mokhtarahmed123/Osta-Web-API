@@ -1,22 +1,5 @@
 ﻿using Osta.Data.Entities.Booking;
 using Osta.Data.Entities.Technician;
-<<<<<<< HEAD
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Osta.Domain.Entities.Technician
-{
-    [Table("TechnicianEarning", Schema = "Technician")]
-    public class TechnicianEarning
-    {
-        [Key]
-        public int Id { get; set; }
-
-
-
-        public string TechnicianId { get; set; }
-
-=======
 
 namespace Osta.Domain.Entities.Technician
 {
@@ -24,16 +7,11 @@ namespace Osta.Domain.Entities.Technician
     {
         public int Id { get; set; }
         public string TechnicianId { get; set; }
->>>>>>> c73a0b6 (Initial commit)
         public int BookingId { get; set; }
         public decimal GrossAmount { get; set; }
         public decimal PlatformFee { get; set; }
         public decimal NetAmount { get; set; }
         public DateTime EarnedAt { get; set; } = DateTime.UtcNow;
-<<<<<<< HEAD
-
-=======
->>>>>>> c73a0b6 (Initial commit)
         public Bookings Booking { get; set; }
         public Technicians Technician { get; set; }
 

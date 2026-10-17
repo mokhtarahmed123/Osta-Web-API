@@ -4,11 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Osta.Domain.Entities.Technician
 {
-<<<<<<< HEAD
-    [Table("TechnicianPayout", Schema = "Technician")]
-=======
 
->>>>>>> c73a0b6 (Initial commit)
     public class TechnicianPayout
     {
         public int Id { get; set; }

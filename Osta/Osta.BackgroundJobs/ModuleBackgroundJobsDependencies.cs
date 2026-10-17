@@ -14,12 +14,7 @@ namespace Osta.BackgroundJobs
              CompatibilityLevel.Version_180)
             .UseSimpleAssemblyNameTypeSerializer()
              .UseRecommendedSerializerSettings()
-<<<<<<< HEAD
-        .UseSqlServerStorage(
-    configuration.GetConnectionString(
-=======
         .UseSqlServerStorage(configuration.GetConnectionString(
->>>>>>> c73a0b6 (Initial commit)
         "osta")));
 
             services.AddHangfireServer();

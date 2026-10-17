@@ -1,13 +1,5 @@
-<<<<<<< HEAD
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Osta.Data.Entities.Services
-{
-    [Table("Category", Schema = "Service")]
-=======
 ﻿namespace Osta.Data.Entities.Services
 {
->>>>>>> c73a0b6 (Initial commit)
 
     public class Category
     {

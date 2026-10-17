@@ -1,11 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Osta.Core.HandlerMiddleware;
-<<<<<<< HEAD
-=======
 using Osta.Data.Entities.Booking;
 using Osta.Data.Entities.Identity;
 using Osta.Data.Entities.Technician;
->>>>>>> c73a0b6 (Initial commit)
 using Osta.Domain.Entities.Appointment;
 using Osta.Infrastructure.Abstract.AppointmentAbstract;
 using Osta.Infrastructure.InfrastructureBases;
@@ -203,16 +200,6 @@ namespace Osta.Service.Service.AppointmentServiceFolder
         {
             var now = DateTime.UtcNow;
             var windowEnd = now.AddHours(1);
-<<<<<<< HEAD
-            var upcomingAppointments = await appointmentRepository.GetTableNoTracking(ct).Include
-                    (a => a.Booking).ThenInclude(b => b.Customer)
-            .Include(a => a.Booking).ThenInclude(b => b.Technician).ThenInclude(x => x.User)
-            .Where(a => a.ScheduledEnd >= now
-                     && a.ScheduledStart <= windowEnd
-                     && !a.ReminderSent
-                     && a.IsApproved == true)
-            .ToListAsync();
-=======
             var upcomingAppointments = await appointmentRepository
       .GetTableNoTracking(ct)
       .Where(a => a.ScheduledEnd >= now
@@ -246,7 +233,6 @@ namespace Osta.Service.Service.AppointmentServiceFolder
           }
       })
       .ToListAsync(ct);
->>>>>>> c73a0b6 (Initial commit)
 
             return upcomingAppointments;
 

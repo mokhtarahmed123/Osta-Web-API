@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Osta.Data.Entities;
-<<<<<<< HEAD
-=======
 using Osta.Data.Entities.Booking;
->>>>>>> c73a0b6 (Initial commit)
 using Osta.Infrastructure.Abstract.ReviewAbstract;
 using Osta.Infrastructure.InfrastructureBases;
 using Osta.Service.Abstract.ReviewAbstract;
@@ -56,10 +53,6 @@ namespace Osta.Service.Service
 
         public async Task<IEnumerable<Review>> GetAll(CancellationToken cancellationToken)
         {
-<<<<<<< HEAD
-            return await reviewRepository.GetTableNoTracking(cancellationToken).Include(x => x.Booking).ToListAsync();
-
-=======
             return await reviewRepository
                     .GetTableNoTracking(cancellationToken)
                     .Select(a => new Review
@@ -75,17 +68,10 @@ namespace Osta.Service.Service
                         }
                     })
                     .ToListAsync(cancellationToken);
->>>>>>> c73a0b6 (Initial commit)
         }
 
         public async Task<IEnumerable<Review>> GetAllMyReviewAsTechnician(string TechId, CancellationToken cancellationToken)
         {
-<<<<<<< HEAD
-            return await reviewRepository.GetTableNoTracking(cancellationToken)
-                .Include(a => a.Booking).
-                Where(a => a.Booking.TechnicianId == TechId).
-                ToListAsync();
-=======
             return await reviewRepository
                .GetTableNoTracking(cancellationToken)
                .Where(a => a.Booking.TechnicianId == TechId)
@@ -98,20 +84,12 @@ namespace Osta.Service.Service
 
                })
                .ToListAsync(cancellationToken);
->>>>>>> c73a0b6 (Initial commit)
 
 
         }
 
         public async Task<IEnumerable<Review>> GetAllMyReviewAsUser(string userId, CancellationToken cancellationToken)
         {
-<<<<<<< HEAD
-            return await reviewRepository.GetTableNoTracking(cancellationToken)
-                .Include(a => a.Booking).
-                Where(a => a.Booking.CustomerId == userId).
-                ToListAsync();
-
-=======
             return await reviewRepository
                   .GetTableNoTracking(cancellationToken)
                   .Where(a => a.Booking.CustomerId == userId)
@@ -124,7 +102,6 @@ namespace Osta.Service.Service
                       CreatedAt = a.CreatedAt,
                   })
                   .ToListAsync(cancellationToken);
->>>>>>> c73a0b6 (Initial commit)
         }
 
         public async Task<double> GetAllRatingWithTechnicianId(string TechId, CancellationToken cancellationToken)

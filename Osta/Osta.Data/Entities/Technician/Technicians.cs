@@ -2,17 +2,9 @@
 using Osta.Data.Entities.Identity;
 using Osta.Data.Enum;
 using Osta.Domain.Entities.Technician;
-<<<<<<< HEAD
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Osta.Data.Entities.Technician
 {
-    [Table("Technicians", Schema = "Technician")]
-=======
-
-namespace Osta.Data.Entities.Technician
-{
->>>>>>> c73a0b6 (Initial commit)
     public class Technicians
     {
 

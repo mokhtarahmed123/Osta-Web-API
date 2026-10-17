@@ -10,22 +10,9 @@ namespace Osta.Service.Abstract.AdministrationAbstract
         Task Delete(int Id, CancellationToken cancellationToken);
         Task<IEnumerable<Complaint>> GetMyComplaints(string UserId, CancellationToken cancellationToken);
         Task<IEnumerable<Complaint>> GetAllComplaints(CancellationToken cancellationToken);
-<<<<<<< HEAD
-        Task<Complaint?> GetById(
-          int id,
-          CancellationToken cancellationToken);
-        Task UpdateStatus(
-            int id,
-            ComplaintStatus status,
-            CancellationToken cancellationToken);
-        Task<IEnumerable<Complaint>> GetByBookingId(
-    int bookingId,
-    CancellationToken cancellationToken);
-=======
         Task<Complaint?> GetById(int id, CancellationToken cancellationToken);
         Task UpdateStatus(int id, ComplaintStatus status, CancellationToken cancellationToken);
         Task<IEnumerable<Complaint>> GetByBookingId(int bookingId, CancellationToken cancellationToken);
->>>>>>> c73a0b6 (Initial commit)
 
     }
 }

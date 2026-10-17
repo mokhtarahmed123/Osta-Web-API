@@ -11,29 +11,6 @@ namespace Osta.Domain.Entities.Customer
     {
         public int Id { get; set; }
 
-<<<<<<< HEAD
-
-        public string Code { get; set; } = Guid.NewGuid().ToString("N")[..8].ToUpper();
-
-
-        public DiscountTypeEnum DiscountType { get; set; } = DiscountTypeEnum.Percentage;
-        public decimal DiscountValue { get; set; }
-
-
-        public DateOnly StartDate { get; set; }
-
-
-        public DateOnly EndDate { get; set; }
-
-        public int UsageLimit { get; set; }
-
-
-        public int UsedCount { get; set; } = 0;
-
-        public bool IsActive { get; set; } = true;
-
-
-=======
         public string Code { get; set; } = Guid.NewGuid().ToString("N")[..8].ToUpper();
 
         public DiscountTypeEnum DiscountType { get; set; } = DiscountTypeEnum.Percentage;
@@ -47,7 +24,6 @@ namespace Osta.Domain.Entities.Customer
         public int UsedCount { get; set; } = 0;
         public bool IsActive { get; set; } = true;
 
->>>>>>> c73a0b6 (Initial commit)
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public ICollection<CouponUsage> Usages { get; set; } = new List<CouponUsage>();

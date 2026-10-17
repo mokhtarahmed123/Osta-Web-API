@@ -8,10 +8,6 @@ namespace Osta.Identity.Authentication
     public interface IAuthenticationService
     {
         public Task<JWTAuthResponse> GenerateJWToken(User user);
-<<<<<<< HEAD
-
-=======
->>>>>>> c73a0b6 (Initial commit)
         public Task SaveRefreshToken(RefreshToken refreshToken, User user);
         public Task<JWTAuthResponse> GetRefreshToken(string refreshTokenString, string Token);
         Task RevokeRefreshToken(string UserId);

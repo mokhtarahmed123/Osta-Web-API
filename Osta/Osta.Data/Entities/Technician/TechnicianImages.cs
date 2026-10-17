@@ -1,16 +1,8 @@
 ﻿using Osta.Data.Entities.Technician;
-<<<<<<< HEAD
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Osta.Domain.Entities.Technician
-{
-    [Table("TechnicianImages", Schema = "Technician")]
-=======
 
 namespace Osta.Domain.Entities.Technician
 {
 
->>>>>>> c73a0b6 (Initial commit)
     public class TechnicianImages
     {
 

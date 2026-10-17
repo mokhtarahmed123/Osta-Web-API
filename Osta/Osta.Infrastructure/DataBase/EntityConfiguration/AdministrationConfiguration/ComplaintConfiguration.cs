@@ -9,13 +9,9 @@ namespace Osta.Infrastructure.DataBase.EntityConfiguration.Administration
         public void Configure(EntityTypeBuilder<Complaint> builder)
         {
             builder.ToTable("Complaints", "Administration");
-<<<<<<< HEAD
-            builder.HasKey(c => c.Id);
-=======
 
             builder.HasKey(c => c.Id);
 
->>>>>>> c73a0b6 (Initial commit)
             builder.Property(c => c.Description)
                 .HasMaxLength(2000)
                 .IsRequired();
@@ -29,10 +25,6 @@ namespace Osta.Infrastructure.DataBase.EntityConfiguration.Administration
                 .IsRequired();
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> c73a0b6 (Initial commit)
             builder.HasOne(c => c.Booking)
                 .WithMany(b => b.Complaints)
                 .HasForeignKey(c => c.BookingId)

@@ -36,18 +36,10 @@ namespace Osta.Booking.Service
                 var imagePath = await imageUpload.UploadImageAsync(file, location, cancellationToken);
                 media.FileUrl = baseUrl + imagePath;
             }
-<<<<<<< HEAD
-
-=======
->>>>>>> c73a0b6 (Initial commit)
             try
             {
                 await mediaRepository.AddAsync(media, cancellationToken);
                 await unitOfWork.SaveChangesAsync();
-<<<<<<< HEAD
-
-=======
->>>>>>> c73a0b6 (Initial commit)
             }
             catch
             {

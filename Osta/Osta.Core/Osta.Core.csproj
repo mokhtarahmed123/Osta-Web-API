@@ -10,13 +10,7 @@
     <ProjectReference Include="..\Osta.BackgroundJobs\Osta.BackgroundJobs.csproj" />
     <ProjectReference Include="..\Osta.Booking\Osta.Booking.csproj" />
     <ProjectReference Include="..\Osta.Chat\Osta.Chat.csproj" />
-<<<<<<< HEAD
-    <ProjectReference Include="..\Osta.Data\Osta.Domain.csproj" />
     <ProjectReference Include="..\Osta.Identity\Osta.Identity.csproj" />
-    <ProjectReference Include="..\Osta.Infrastructure\Osta.Infrastructure.csproj" />
-=======
-    <ProjectReference Include="..\Osta.Identity\Osta.Identity.csproj" />
->>>>>>> c73a0b6 (Initial commit)
     <ProjectReference Include="..\Osta.Payment\Osta.Payment.csproj" />
     <ProjectReference Include="..\Osta.Service\Osta.Service.csproj" />
   </ItemGroup>

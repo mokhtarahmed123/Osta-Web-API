@@ -104,27 +104,7 @@ namespace Osta.Service.Service.TechnicianServiceFolder
 
         public async Task<TechnicianAvailability?> GetTechnicianAvailabilityAsync(int id, CancellationToken ct = default)
         {
-<<<<<<< HEAD
-            //var cachedTechnicianAvailability = await cacheService.GetDataAsync<TechnicianAvailability>(TechnicianAvailabilityCacheKey);
-
-            //if (cachedTechnicianAvailability is not null)
-            //{
-            //    return cacheTechnicianAvailability;
-            //}
-
             var TechnicianAvailability = await technicianAvailabilityRepository.GetByIdAsync(id, ct);
-
-            //if (address is not null)
-            //{
-            //    await cacheService.SetDataAsync(
-            //        AddressCacheKey,
-            //        address,
-            //        TimeSpan.FromMinutes(10));
-            //}
-
-=======
-            var TechnicianAvailability = await technicianAvailabilityRepository.GetByIdAsync(id, ct);
->>>>>>> c73a0b6 (Initial commit)
             return TechnicianAvailability;
 
         }

@@ -7,15 +7,8 @@ using Osta.Domain.Entities.Technician;
 
 namespace Osta.Data.Entities.Booking
 {
-<<<<<<< HEAD
-
     public class Bookings
     {
-
-=======
-    public class Bookings
-    {
->>>>>>> c73a0b6 (Initial commit)
         public int Id { get; set; }
 
         public string CustomerId { get; set; }
@@ -26,31 +19,14 @@ namespace Osta.Data.Entities.Booking
 
         public Technicians Technician { get; set; } = null!;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> c73a0b6 (Initial commit)
         public string Street { get; set; } = string.Empty;
         public string Area { get; set; } = string.Empty;
         public string City { get; set; } = string.Empty;
         public string Governorate { get; set; } = string.Empty;
 
-<<<<<<< HEAD
-
-
-
         public DateTime BookingDate { get; set; } = DateTime.UtcNow;
 
         public BookingStatus Status { get; set; } = BookingStatus.Pending;
-
-
-
-
-=======
-        public DateTime BookingDate { get; set; } = DateTime.UtcNow;
-
-        public BookingStatus Status { get; set; } = BookingStatus.Pending;
->>>>>>> c73a0b6 (Initial commit)
         public ICollection<Payment> Payments { get; set; } = new List<Payment>();
         public ICollection<Review> Reviews { get; set; } = new List<Review>();
         public ICollection<Media> Medias { get; set; } = new List<Media>();

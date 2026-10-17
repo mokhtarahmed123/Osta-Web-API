@@ -32,11 +32,7 @@ namespace Osta.Service.Service.TechnicianServiceFolder
             this.unitOfWork = unitOfWork;
         }
 
-<<<<<<< HEAD
-        // Helper بيحول أي Relative Path لـ Full URL
-=======
 
->>>>>>> c73a0b6 (Initial commit)
         private string? BuildFullUrl(string? relativePath)
         {
             if (string.IsNullOrEmpty(relativePath)) return relativePath;
@@ -48,11 +44,7 @@ namespace Osta.Service.Service.TechnicianServiceFolder
             return baseUrl + relativePath;
         }
 
-<<<<<<< HEAD
-        // بيحول الـ Entity كامل قبل الرجوع للـ Client
-=======
 
->>>>>>> c73a0b6 (Initial commit)
         private TechnicianImages MapToFullUrls(TechnicianImages entity)
         {
             return new TechnicianImages

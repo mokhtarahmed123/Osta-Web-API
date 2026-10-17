@@ -37,15 +37,9 @@ namespace Osta.Service
             services.AddScoped<ITechnicianPayoutService, TechnicianPayoutService>();
             #endregion
 
-<<<<<<< HEAD
-            services.AddScoped<IAppointmentService, AppointmentService>();
-            services.AddScoped<IBookingServiceService, BookingServiceService>();
-
-=======
 
             services.AddScoped<IAppointmentService, AppointmentService>();
             services.AddScoped<IBookingServiceService, BookingServiceService>();
->>>>>>> c73a0b6 (Initial commit)
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IReviewService, ReviewService>();
             services.AddScoped<IComplaintService, ComplaintService>();
