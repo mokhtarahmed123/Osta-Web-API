@@ -1,5 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Osta.Data.Entities.Administration;
+<<<<<<< HEAD
+=======
+using Osta.Data.Entities.Booking;
+>>>>>>> c73a0b6 (Initial commit)
 using Osta.Data.Enum;
 using Osta.Infrastructure.Abstract.AdministrationAbstract;
 using Osta.Infrastructure.InfrastructureBases;
@@ -39,6 +43,10 @@ namespace Osta.Service.Service.AdministrationServiceFolder
                 $"Complaint added successfully for Booking Id: {complaint.BookingId}");
         }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c73a0b6 (Initial commit)
         public async Task Update(
             int id,
             Complaint complaint,
@@ -51,10 +59,16 @@ namespace Osta.Service.Service.AdministrationServiceFolder
                 await complaintRepository.GetByIdAsync(id, cancellationToken);
 
             if (existingComplaint is null)
+<<<<<<< HEAD
                 throw new KeyNotFoundException(
                     "Complaint not found.");
 
             // Only Description can be updated
+=======
+                throw new KeyNotFoundException("Complaint not found.");
+
+
+>>>>>>> c73a0b6 (Initial commit)
             existingComplaint.Description =
                 complaint.Description;
 
@@ -63,8 +77,12 @@ namespace Osta.Service.Service.AdministrationServiceFolder
 
             await unitOfWork.SaveChangesAsync();
 
+<<<<<<< HEAD
             loggerService.LogInformation(
                 $"Complaint {id} updated successfully.");
+=======
+            loggerService.LogInformation($"Complaint {id} updated successfully.");
+>>>>>>> c73a0b6 (Initial commit)
         }
 
         public async Task Delete(
@@ -93,12 +111,35 @@ namespace Osta.Service.Service.AdministrationServiceFolder
         {
             return await complaintRepository
                 .GetTableAsTracking(cancellationToken)
+<<<<<<< HEAD
                 .Include(x => x.Booking)
                 .FirstOrDefaultAsync(
                     x => x.Id == id,
                     cancellationToken);
         }
 
+=======
+                .Where(x => x.Id == id)
+                .Select(x => new Complaint
+                {
+                    Id = x.Id,
+                    CreatedAt = x.CreatedAt,
+                    Description = x.Description,
+                    Status = x.Status,
+                    BookingId = x.Booking.Id,
+                    Booking = new Bookings
+                    {
+
+                        BookingDate = x.Booking.BookingDate,
+                        CustomerId = x.Booking.CustomerId,
+                        TechnicianId = x.Booking.TechnicianId
+                    }
+                })
+                .FirstOrDefaultAsync(cancellationToken);
+        }
+
+
+>>>>>>> c73a0b6 (Initial commit)
         public async Task<IEnumerable<Complaint>>
             GetMyComplaints(
                 string userId,
@@ -111,7 +152,25 @@ namespace Osta.Service.Service.AdministrationServiceFolder
 
             return await complaintRepository
                 .GetTableAsTracking(cancellationToken)
+<<<<<<< HEAD
                 .Include(x => x.Booking)
+=======
+                  .Select(x => new Complaint
+                  {
+                      Id = x.Id,
+                      CreatedAt = x.CreatedAt,
+                      Description = x.Description,
+                      Status = x.Status,
+                      BookingId = x.Booking.Id,
+                      Booking = new Bookings
+                      {
+
+                          BookingDate = x.Booking.BookingDate,
+                          CustomerId = x.Booking.CustomerId,
+                          TechnicianId = x.Booking.TechnicianId
+                      }
+                  })
+>>>>>>> c73a0b6 (Initial commit)
                 .Where(x =>
                     x.Booking.CustomerId == userId)
                 .ToListAsync(cancellationToken);
@@ -122,11 +181,36 @@ namespace Osta.Service.Service.AdministrationServiceFolder
                 CancellationToken cancellationToken)
         {
             return await complaintRepository
+<<<<<<< HEAD
                 .GetTableAsTracking(cancellationToken)
                 .Include(x => x.Booking)
                 .ToListAsync(cancellationToken);
         }
 
+=======
+         .GetTableAsTracking(cancellationToken)
+                  .Select(x => new Complaint
+                  {
+                      Id = x.Id,
+                      CreatedAt = x.CreatedAt,
+                      Description = x.Description,
+                      Status = x.Status,
+                      BookingId = x.Booking.Id,
+                      Booking = new Bookings
+                      {
+
+                          BookingDate = x.Booking.BookingDate,
+                          CustomerId = x.Booking.CustomerId,
+                          TechnicianId = x.Booking.TechnicianId
+                      }
+                  })
+
+         .ToListAsync(cancellationToken);
+        }
+
+
+
+>>>>>>> c73a0b6 (Initial commit)
         public async Task<IEnumerable<Complaint>>
             GetByBookingId(
                 int bookingId,
@@ -136,6 +220,22 @@ namespace Osta.Service.Service.AdministrationServiceFolder
                 .GetTableAsTracking(cancellationToken)
                 .Include(x => x.Booking)
                 .Where(x => x.BookingId == bookingId)
+<<<<<<< HEAD
+=======
+             .Select(x => new Complaint
+             {
+                 Id = x.Id,
+                 CreatedAt = x.CreatedAt,
+                 Description = x.Description,
+                 Status = x.Status,
+                 Booking = new Bookings
+                 {
+                     BookingDate = x.Booking.BookingDate,
+                     CustomerId = x.Booking.CustomerId,
+                     TechnicianId = x.Booking.TechnicianId
+                 }
+             })
+>>>>>>> c73a0b6 (Initial commit)
                 .ToListAsync(cancellationToken);
         }
 

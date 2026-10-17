@@ -120,6 +120,10 @@ namespace Osta.Service.Service.TechnicianServiceFolder
             {
                 var existingServiceArea = await serviceAreaRepository.GetByIdAsync(id, ct);
 
+<<<<<<< HEAD
+=======
+                if (existingServiceArea == null) throw new NullReferenceException(" Null ");
+>>>>>>> c73a0b6 (Initial commit)
                 existingServiceArea.State = ServiceArea.State;
                 existingServiceArea.City = ServiceArea.City;
                 existingServiceArea.Name = ServiceArea.Name;

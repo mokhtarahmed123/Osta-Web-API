@@ -13,7 +13,10 @@ namespace Osta.Infrastructure.DataBase.EntityConfiguration.BookingConfiguration
 
             builder.HasKey(m => m.Id);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c73a0b6 (Initial commit)
             builder.Property(m => m.FileUrl)
                 .HasMaxLength(500)
                 .IsRequired();

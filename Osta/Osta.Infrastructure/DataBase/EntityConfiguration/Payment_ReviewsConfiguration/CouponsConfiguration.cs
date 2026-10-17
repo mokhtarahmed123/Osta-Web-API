@@ -44,6 +44,13 @@ namespace Osta.Infrastructure.DataBase.EntityConfiguration.Payment_ReviewsConfig
             builder.Property(x => x.EndDate)
                 .IsRequired();
 
+<<<<<<< HEAD
+=======
+            builder.ToTable(t => t.HasCheckConstraint(
+             "CK_YourTable_EndDate_After_StartDate",
+             "[EndDate] > [StartDate]"));
+
+>>>>>>> c73a0b6 (Initial commit)
 
             builder.Property(x => x.UsageLimit)
                 .IsRequired();

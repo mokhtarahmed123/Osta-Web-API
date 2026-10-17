@@ -24,12 +24,23 @@ namespace Osta.Infrastructure.DataBase.EntityConfiguration.AppointmentConfigurat
             builder.Property(a => a.ScheduledEnd)
                 .IsRequired();
 
+<<<<<<< HEAD
+=======
+            builder.ToTable(t => t.HasCheckConstraint(
+                "CK_Booking_ScheduledEnd_After_ScheduledStart",
+                "[ScheduledEnd] > [ScheduledStart]"));
+
+>>>>>>> c73a0b6 (Initial commit)
 
             builder.Property(a => a.ReminderSent)
                 .IsRequired()
                 .HasDefaultValue(false);
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c73a0b6 (Initial commit)
             builder.Property(a => a.IsApproved)
                 .IsRequired()
                 .HasDefaultValue(false);

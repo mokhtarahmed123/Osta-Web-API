@@ -7,7 +7,10 @@
         public int Rating { get; set; }
         public string Comment { get; set; }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c73a0b6 (Initial commit)
     }
 }

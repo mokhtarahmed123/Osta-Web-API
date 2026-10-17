@@ -15,6 +15,7 @@ namespace Osta.Service.Abstract.AppointmentAbstract
         Task RejectAppointmentAsync(string id, CancellationToken ct = default);
         Task<IEnumerable<Appointment>> GetAllAppointmentsAsync(CancellationToken ct = default);
         Task<IEnumerable<Appointment>> GetAllAppointmentsByUserIdAsync(string userid, CancellationToken ct = default);
+<<<<<<< HEAD
         Task<Appointment?> GetByBookingIdAsync(
 int bookingId,
 CancellationToken cancellationToken = default);
@@ -24,6 +25,10 @@ CancellationToken cancellationToken = default);
    DateTime scheduledStart,
    DateTime scheduledEnd,
    CancellationToken ct = default);
+=======
+        Task<Appointment?> GetByBookingIdAsync(int bookingId, CancellationToken cancellationToken = default);
+        Task<bool> HasConflictAsync(string? id, string technicianId, DateTime scheduledStart, DateTime scheduledEnd, CancellationToken ct = default);
+>>>>>>> c73a0b6 (Initial commit)
 
         Task MakeReminderSentTrue(string AppointmentId, CancellationToken ct = default);
         Task<List<Appointment>> CheckUpcomingAppointmentsAsync(CancellationToken ct = default);

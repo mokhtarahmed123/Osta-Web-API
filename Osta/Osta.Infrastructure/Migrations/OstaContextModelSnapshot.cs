@@ -795,7 +795,14 @@ namespace Osta.Infrastructure.Migrations
                     b.HasIndex("BookingId")
                         .IsUnique();
 
+<<<<<<< HEAD
                     b.ToTable("Appointments", "Appointment");
+=======
+                    b.ToTable("Appointments", "Appointment", t =>
+                        {
+                            t.HasCheckConstraint("CK_Booking_ScheduledEnd_After_ScheduledStart", "[ScheduledEnd] > [ScheduledStart]");
+                        });
+>>>>>>> c73a0b6 (Initial commit)
                 });
 
             modelBuilder.Entity("Osta.Domain.Entities.Chat.Message", b =>
@@ -884,7 +891,14 @@ namespace Osta.Infrastructure.Migrations
                     b.HasIndex("Code")
                         .IsUnique();
 
+<<<<<<< HEAD
                     b.ToTable("Coupons", "Payment");
+=======
+                    b.ToTable("Coupons", "Payment", t =>
+                        {
+                            t.HasCheckConstraint("CK_YourTable_EndDate_After_StartDate", "[EndDate] > [StartDate]");
+                        });
+>>>>>>> c73a0b6 (Initial commit)
                 });
 
             modelBuilder.Entity("Osta.Domain.Entities.Identity.Permission", b =>

@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Osta.Domain", "Osta.Data\Os
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Osta.Infrastructure", "Osta.Infrastructure\Osta.Infrastructure.csproj", "{37766C96-1059-4E3B-8DDE-0C72C3F9F600}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Osta.Core", "Osta.Core\Osta.Core.csproj", "{E43EF734-877A-48AE-8BCE-2BA316055A73}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Osta.Test", "Osta.Test\Osta.Test.csproj", "{8DF52198-54A4-414E-82B2-D3406D3A0633}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
@@ -58,10 +56,6 @@ Global
 		{37766C96-1059-4E3B-8DDE-0C72C3F9F600}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37766C96-1059-4E3B-8DDE-0C72C3F9F600}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37766C96-1059-4E3B-8DDE-0C72C3F9F600}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E43EF734-877A-48AE-8BCE-2BA316055A73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E43EF734-877A-48AE-8BCE-2BA316055A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E43EF734-877A-48AE-8BCE-2BA316055A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E43EF734-877A-48AE-8BCE-2BA316055A73}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8DF52198-54A4-414E-82B2-D3406D3A0633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8DF52198-54A4-414E-82B2-D3406D3A0633}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DF52198-54A4-414E-82B2-D3406D3A0633}.Release|Any CPU.ActiveCfg = Release|Any CPU

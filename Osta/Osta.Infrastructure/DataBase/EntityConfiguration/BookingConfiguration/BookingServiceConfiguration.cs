@@ -9,15 +9,21 @@ namespace Osta.Infrastructure.DataBase.EntityConfiguration.BookingConfiguration
         public void Configure(EntityTypeBuilder<BookingService> builder)
         {
             builder.ToTable("BookingServices", "Booking");
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c73a0b6 (Initial commit)
             builder.HasKey(bs => new
             {
                 bs.BookingId,
                 bs.ServiceId
             });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c73a0b6 (Initial commit)
             builder.HasOne(bs => bs.Booking)
                 .WithMany()
                 .HasForeignKey(bs => bs.BookingId)

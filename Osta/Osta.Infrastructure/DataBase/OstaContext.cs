@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿
 using Microsoft.AspNetCore.Identity;
+=======
+﻿using Microsoft.AspNetCore.Identity;
+>>>>>>> c73a0b6 (Initial commit)
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Osta.Data.Entities;
@@ -66,6 +70,7 @@ namespace Osta.Infrastructure.DataBase
         #endregion 
         public OstaContext() { }
         public OstaContext(DbContextOptions<OstaContext> options) : base(options) { }
+<<<<<<< HEAD
 
 
 
@@ -74,6 +79,10 @@ namespace Osta.Infrastructure.DataBase
         {
 
 
+=======
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+>>>>>>> c73a0b6 (Initial commit)
             base.OnModelCreating(builder);
             builder.Entity<User>().ToTable("AspNetUsers", "Identity");
             builder.Entity<Role>().ToTable("AspNetRoles", "Identity");
@@ -107,6 +116,7 @@ namespace Osta.Infrastructure.DataBase
             builder.ApplyConfiguration(new TechnicianServiceConfiguration());
             builder.ApplyConfiguration(new TechnicianServiceAreaConfiguration());
 
+<<<<<<< HEAD
 
 
 
@@ -121,6 +131,10 @@ namespace Osta.Infrastructure.DataBase
 
 
 
+=======
+            builder.Entity<Permission>()
+                .HasData(PermissionSeeder.GetPermissions());
+>>>>>>> c73a0b6 (Initial commit)
         }
     }
 }

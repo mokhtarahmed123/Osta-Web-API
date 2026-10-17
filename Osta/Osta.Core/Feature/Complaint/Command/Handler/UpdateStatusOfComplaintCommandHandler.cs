@@ -21,9 +21,13 @@ namespace Osta.Core.Feature.Complaint.Command.Handler
             this.loggerService = loggerService;
         }
 
+<<<<<<< HEAD
         public async Task<Response<string>> Handle(
     UpdateStatusOfComplaintCommand request,
     CancellationToken cancellationToken)
+=======
+        public async Task<Response<string>> Handle(UpdateStatusOfComplaintCommand request, CancellationToken cancellationToken)
+>>>>>>> c73a0b6 (Initial commit)
         {
             if (request is null)
                 throw new ArgumentNullException(nameof(request));

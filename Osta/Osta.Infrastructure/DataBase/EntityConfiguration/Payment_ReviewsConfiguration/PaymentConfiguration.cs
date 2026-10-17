@@ -10,10 +10,15 @@ namespace Osta.Infrastructure.DataBase.EntityConfiguration.Payment_ReviewsConfig
         {
             builder.ToTable("Payments", "Payment");
 
+<<<<<<< HEAD
 
             builder.HasKey(x => x.Id);
 
 
+=======
+            builder.HasKey(x => x.Id);
+
+>>>>>>> c73a0b6 (Initial commit)
             builder.HasOne(x => x.bookings)
                 .WithMany()
                 .HasForeignKey(x => x.BookingId)
