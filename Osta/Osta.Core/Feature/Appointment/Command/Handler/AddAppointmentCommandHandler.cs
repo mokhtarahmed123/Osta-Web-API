@@ -2,13 +2,13 @@
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Osta.Booking.Interface;
+using Osta.Core.Abstract.AppointmentAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Appointment.Command.Model;
 using Osta.Data.Entities.Identity;
 using Osta.Data.Enum;
 using Osta.Notification.DTOs;
 using Osta.Notification.Queue;
-using Osta.Service.Abstract.AppointmentAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Core.Feature.Appointment.Command.Handler

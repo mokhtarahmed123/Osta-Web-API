@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Technician.Query.Model.TechnicianModel;
 using Osta.Core.Feature.Technician.Query.Result.ResultTechnician;
 using Osta.Data.Entities.Identity;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Core.Feature.Technician.Query.Handler.TechnicianQueryHandler

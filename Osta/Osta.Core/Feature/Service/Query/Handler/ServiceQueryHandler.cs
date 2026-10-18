@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using MediatR;
+using Osta.Core.Abstract.ServicesAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Service.Query.Model;
 using Osta.Core.Feature.Service.Query.Result;
-using Osta.Service.Abstract.ServicesAbstract;
 using Osta.SharedKernel.Logging;
 using System.Diagnostics;
 

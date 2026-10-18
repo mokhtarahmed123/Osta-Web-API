@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Osta.Infrastructure\Osta.Infrastructure.csproj" />
+    <ProjectReference Include="..\Osta.Data\Osta.Domain.csproj" />
   </ItemGroup>
 
 </Project>

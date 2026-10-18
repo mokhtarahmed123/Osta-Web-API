@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Osta.Core.Abstract.CustomerAbstract;
 using Osta.Data.Entities;
 using Osta.Infrastructure.Abstract.CustomerAbstract;
 using Osta.Infrastructure.InfrastructureBases;
-using Osta.Service.Abstract.CustomerAbstract;
 
 namespace Osta.Service.Service.CustomerServiceFolder
 {

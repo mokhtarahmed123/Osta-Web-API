@@ -14,7 +14,6 @@ using Osta.Infrastructure.Abstract.PaymentAbstract;
 using Osta.Infrastructure.Abstract.ReviewAbstract;
 using Osta.Infrastructure.Abstract.ServicesAbstract;
 using Osta.Infrastructure.Abstract.TechnicianAbstract;
-using Osta.Infrastructure.Caching;
 using Osta.Infrastructure.Caching.Redis;
 using Osta.Infrastructure.DataBase;
 using Osta.Infrastructure.Implementation.AdministrationImplementation;
@@ -31,6 +30,7 @@ using Osta.Infrastructure.Implementation.TechnicianImplementation;
 using Osta.Infrastructure.Implementation.TechnicianImplemention;
 using Osta.Infrastructure.InfrastructureBases;
 using Osta.Infrastructure.Logging;
+using Osta.SharedKernel.Caching;
 using Osta.SharedKernel.Logging;
 using System.Text;
 

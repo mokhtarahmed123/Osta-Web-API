@@ -1,6 +1,4 @@
 using Osta.Data.Helper;
-using Osta.Notification.Email;
-using Osta.Notification.Interfaces;
 using Osta.Notification.Worker.Consumers;
 
 namespace Osta.Notification.Worker
@@ -11,7 +9,6 @@ namespace Osta.Notification.Worker
         {
             var builder = Host.CreateApplicationBuilder(args);
 
-            builder.Services.AddScoped<IEmailService, EmailService>();
 
             builder.Services.Configure<EmailSettings>(
                 builder.Configuration.GetSection("Email"));

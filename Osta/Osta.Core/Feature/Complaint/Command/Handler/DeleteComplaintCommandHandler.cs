@@ -1,8 +1,8 @@
 ﻿using MediatR;
+using Osta.Core.Abstract.AdministrationAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Complaint.Command.Model;
 using Osta.Data.Enum;
-using Osta.Service.Abstract.AdministrationAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Core.Feature.Complaint.Command.Handler

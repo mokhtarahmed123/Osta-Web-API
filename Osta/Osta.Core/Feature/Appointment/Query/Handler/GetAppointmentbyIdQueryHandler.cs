@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using MediatR;
 using Osta.Booking.Interface;
+using Osta.Core.Abstract.AppointmentAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Appointment.Query.Model;
 using Osta.Core.Feature.Appointment.Query.Result;
-using Osta.Service.Abstract.AppointmentAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Core.Feature.Appointment.Query.Handler

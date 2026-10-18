@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Osta.Core.Abstract.AppointmentAbstract;
 using Osta.Core.HandlerMiddleware;
 using Osta.Data.Entities.Booking;
 using Osta.Data.Entities.Identity;
@@ -6,7 +7,6 @@ using Osta.Data.Entities.Technician;
 using Osta.Domain.Entities.Appointment;
 using Osta.Infrastructure.Abstract.AppointmentAbstract;
 using Osta.Infrastructure.InfrastructureBases;
-using Osta.Service.Abstract.AppointmentAbstract;
 using Osta.SharedKernel.Logging;
 
 namespace Osta.Service.Service.AppointmentServiceFolder

@@ -2,12 +2,12 @@
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Osta.Booking.Interface;
+using Osta.Core.Abstract.ServicesAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Booking.Query.Model.TechnicianModel;
 using Osta.Core.Feature.Booking.Query.Result;
 using Osta.Core.HandlerMiddleware;
 using Osta.Data.Entities.Identity;
-using Osta.Service.Abstract.ServicesAbstract;
 using Osta.SharedKernel.Exceptions;
 using Osta.SharedKernel.Identity;
 using Osta.SharedKernel.Logging;

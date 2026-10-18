@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Osta.Data.Enum;
-using Osta.Infrastructure.Abstract.PaymentAbstract;
 using Osta.Infrastructure.InfrastructureBases;
 using Osta.Payment.Services;
 
@@ -9,16 +8,14 @@ namespace Osta.Core.Feature.Payment.Command.Paymob
     internal class HandlePaymobWebhookCommandHandler : IRequestHandler<HandlePaymobWebhookCommand>
     {
         private readonly IPaymentService _paymentService;
-        private readonly IPaymentRepository _paymentRepository;
+
         private readonly IUnitOfWork _unitOfWork;
 
         public HandlePaymobWebhookCommandHandler(
             IPaymentService paymentService,
-            IPaymentRepository paymentRepository,
-            IUnitOfWork unitOfWork)
+         IUnitOfWork unitOfWork)
         {
             _paymentService = paymentService;
-            _paymentRepository = paymentRepository;
             _unitOfWork = unitOfWork;
         }
         public async Task Handle(HandlePaymobWebhookCommand request, CancellationToken cancellationToken)
@@ -32,7 +29,7 @@ namespace Osta.Core.Feature.Payment.Command.Paymob
 
             if (transactionId is null) return;
 
-            var payment = await _paymentRepository.GetByTransactionIdAsync(transactionId);
+            var payment = await _paymentService.GetByTransactionIdAsync(transactionId, cancellationToken);
             if (payment is null) return;
 
             payment.Status = success ? PaymentStatus.Completed : PaymentStatus.Failed;

@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Moq;
+using Osta.Core.Abstract.ServicesAbstract;
 using Osta.Core.Feature.Category.Command.Handler;
 using Osta.Core.Feature.Category.Command.Model;
 using Osta.Data.Entities.Services;
-using Osta.Service.Abstract.ServicesAbstract;
 using Osta.SharedKernel.Logging;
 using System.Net;
 namespace Osta.Test.CategoryTesting.Commands

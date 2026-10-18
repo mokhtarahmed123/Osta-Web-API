@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Feature.Technician.Command.Model.ModelTechnicianAvailabilities;
 using Osta.Data.Entities.Technician;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Core.Feature.Technician.Command.Validation.ValidationTechnicianAvailabilities

@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Moq;
+using Osta.Core.Abstract.ReviewAbstract;
 using Osta.Core.Feature.Review.Query.Handler;
 using Osta.Core.Feature.Review.Query.Model;
 using Osta.Core.Feature.Review.Query.Result;
 using Osta.Data.Entities;
-using Osta.Service.Abstract.ReviewAbstract;
 using Osta.SharedKernel.Identity;
 using System.Net;
 

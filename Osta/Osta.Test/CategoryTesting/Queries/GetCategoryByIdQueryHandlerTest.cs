@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Moq;
+using Osta.Core.Abstract.ServicesAbstract;
 using Osta.Core.Feature.Category.Query.Handler;
 using Osta.Core.Feature.Category.Query.Model;
 using Osta.Core.Feature.Category.Query.Result;
 using Osta.Data.Entities.Services;
-using Osta.Service.Abstract.ServicesAbstract;
 using Osta.SharedKernel.Logging;
 
 namespace Osta.Test.CategoryTesting.Queries

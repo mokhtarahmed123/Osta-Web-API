@@ -1,12 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Osta.Data.Entities;
 
 namespace Osta.Infrastructure.DataBase.EntityConfiguration.Payment_ReviewsConfiguration
 {
-    public class PaymentConfiguration : IEntityTypeConfiguration<Payment>
+    public class PaymentConfiguration : IEntityTypeConfiguration<Osta.Data.Entities.Payment>
     {
-        public void Configure(EntityTypeBuilder<Payment> builder)
+        public void Configure(EntityTypeBuilder<Osta.Data.Entities.Payment> builder)
         {
             builder.ToTable("Payments", "Payment");
 

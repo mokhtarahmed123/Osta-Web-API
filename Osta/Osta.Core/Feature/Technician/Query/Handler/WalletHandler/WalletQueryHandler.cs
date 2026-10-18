@@ -1,7 +1,7 @@
 ﻿using MediatR;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Technician.Query.Model.Wallet;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Core.Feature.Technician.Query.Handler.WalletHandler

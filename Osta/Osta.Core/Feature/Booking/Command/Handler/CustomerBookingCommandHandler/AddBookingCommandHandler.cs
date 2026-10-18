@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Osta.Booking.Interface;
 using Osta.Booking.Model;
 using Osta.Booking.Producer;
+using Osta.Core.Abstract.ServicesAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Booking.Command.Model.CustomerModel;
 using Osta.Core.HandlerMiddleware;
@@ -12,7 +13,6 @@ using Osta.Data.Entities.Identity;
 using Osta.Data.Enum;
 using Osta.Notification.DTOs;
 using Osta.Notification.Queue;
-using Osta.Service.Abstract.ServicesAbstract;
 using Osta.SharedKernel.Identity;
 using Osta.SharedKernel.Logging;
 

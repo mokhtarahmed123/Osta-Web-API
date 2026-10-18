@@ -2,11 +2,11 @@
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Osta.Booking.Interface;
+using Osta.Core.Abstract.ServicesAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Booking.Query.Model.CustomerModel;
 using Osta.Core.Feature.Booking.Query.Result;
 using Osta.Data.Entities.Identity;
-using Osta.Service.Abstract.ServicesAbstract;
 using Osta.SharedKernel.Identity;
 using Osta.SharedKernel.Logging;
 

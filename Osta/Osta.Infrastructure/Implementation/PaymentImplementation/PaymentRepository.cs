@@ -1,31 +1,29 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Osta.Data.Entities;
 using Osta.Infrastructure.Abstract.PaymentAbstract;
 using Osta.Infrastructure.DataBase;
 using Osta.Infrastructure.InfrastructureBases;
 
 namespace Osta.Infrastructure.Implementation.PaymentImplementation
 {
-    public class PaymentRepository : GenericRepositoryAsync<Payment>, IPaymentRepository
+    public class PaymentRepository : GenericRepositoryAsync<Osta.Data.Entities.Payment>, IPaymentRepository
     {
         #region Vars / Props
-        private readonly DbSet<Payment> Payment;
+        private readonly DbSet<Osta.Data.Entities.Payment> Payment;
         #endregion
         #region Constructor(s)
         public PaymentRepository(OstaContext dbContext) : base(dbContext)
         {
-            Payment = dbContext.Set<Payment>();
+            Payment = dbContext.Set<Osta.Data.Entities.Payment>();
         }
 
-        public async Task<Payment> GetByBookingIdAsync(int BookingId)
+        public async Task<Osta.Data.Entities.Payment> GetByBookingIdAsync(int BookingId)
         {
             return await Payment.FirstOrDefaultAsync(b => b.BookingId == BookingId);
         }
 
-        public async Task<Payment?> GetByTransactionIdAsync(string transactionId)
+        public async Task<Osta.Data.Entities.Payment?> GetByTransactionIdAsync(string transactionId)
         {
             return await Payment.FirstOrDefaultAsync(a => a.TransactionId == transactionId);
-
 
         }
 

@@ -1,8 +1,8 @@
 ﻿using Moq;
+using Osta.Core.Abstract.AdministrationAbstract;
 using Osta.Core.Feature.Complaint.Command.Handler;
 using Osta.Core.Feature.Complaint.Command.Model;
 using Osta.Data.Enum;
-using Osta.Service.Abstract.AdministrationAbstract;
 using Osta.SharedKernel.Identity;
 using Osta.SharedKernel.Logging;
 

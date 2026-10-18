@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Moq;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Feature.Technician.Command.Handler.TechnicianCommandHandler;
 using Osta.Core.Feature.Technician.Command.Model.ModelTechnicianImage;
 using Osta.Core.Feature.Technician.Command.Model.TechnicianModel;
 using Osta.Data.Entities.Technician;
 using Osta.Domain.Entities.Technician;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.Service.Model;
 using Osta.SharedKernel.Identity;
 using Osta.SharedKernel.Logging;

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using Osta.Core.Abstract.AdministrationAbstract;
 using Osta.Core.Bases;
-using Osta.Service.Abstract.AdministrationAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Core.Feature.Complaint.Query.Handler

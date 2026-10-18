@@ -1,8 +1,8 @@
 ﻿using Moq;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Feature.Technician.Command.Handler.TechnicianCommandHandler;
 using Osta.Core.Feature.Technician.Command.Model.TechnicianModel;
 using Osta.Data.Entities.Technician;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.SharedKernel.Logging;
 
 namespace Osta.Test.TechnicianTesting.Command

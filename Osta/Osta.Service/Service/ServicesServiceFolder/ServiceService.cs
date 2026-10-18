@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Osta.Core.Abstract.ServicesAbstract;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Data.Entities.Services;
 using Osta.Infrastructure.Abstract.ServicesAbstract;
-using Osta.Infrastructure.Caching;
 using Osta.Infrastructure.InfrastructureBases;
-using Osta.Service.Abstract.ServicesAbstract;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.Service.Model;
 using Osta.SharedKernel;
+using Osta.SharedKernel.Caching;
 using Osta.SharedKernel.Logging;
 using System.Diagnostics;
 

@@ -1,4 +1,4 @@
-﻿namespace Osta.Domain.Entities.Technician
+﻿namespace Osta.Domain.Entities
 {
     public enum PayoutMethod
     {

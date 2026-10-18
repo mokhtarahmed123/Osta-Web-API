@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Osta.Core.Abstract.ReviewAbstract;
 using Osta.Data.Entities;
 using Osta.Data.Entities.Booking;
 using Osta.Infrastructure.Abstract.ReviewAbstract;
 using Osta.Infrastructure.InfrastructureBases;
-using Osta.Service.Abstract.ReviewAbstract;
 using Osta.SharedKernel.Logging;
 
 namespace Osta.Service.Service

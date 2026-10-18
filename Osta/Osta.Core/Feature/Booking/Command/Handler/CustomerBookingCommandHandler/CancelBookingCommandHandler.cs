@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using Osta.Booking.Interface;
+using Osta.Core.Abstract.ServicesAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Booking.Command.Model.CustomerModel;
-using Osta.Service.Abstract.ServicesAbstract;
 using Osta.SharedKernel.Identity;
 using Osta.SharedKernel.Logging;
 

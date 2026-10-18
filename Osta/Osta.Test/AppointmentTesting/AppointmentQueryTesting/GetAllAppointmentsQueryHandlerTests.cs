@@ -1,13 +1,12 @@
-﻿
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Moq;
 using Osta.Booking.Interface;
+using Osta.Core.Abstract.AppointmentAbstract;
 using Osta.Core.Feature.Appointment.Query.Handler;
 using Osta.Core.Feature.Appointment.Query.Model;
 using Osta.Core.Feature.Appointment.Query.Result;
 using Osta.Data.Entities.Identity;
-using Osta.Service.Abstract.AppointmentAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Test.AppointmentTesting.AppointmentQueryTesting

@@ -20,7 +20,7 @@ namespace Osta.Core
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
             services.AddScoped<IResponseHandler, ResponseHandler>();
-            services.AddScoped<IPaymentQueryService, PaymentQueryService>();
+            //services.AddScoped<IPaymentQueryService, PaymentQueryService>();
             return services;
 
 

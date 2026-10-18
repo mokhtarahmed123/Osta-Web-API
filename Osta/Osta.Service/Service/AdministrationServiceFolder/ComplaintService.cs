@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Osta.Core.Abstract.AdministrationAbstract;
 using Osta.Data.Entities.Administration;
 using Osta.Data.Entities.Booking;
 using Osta.Data.Enum;
 using Osta.Infrastructure.Abstract.AdministrationAbstract;
 using Osta.Infrastructure.InfrastructureBases;
-using Osta.Service.Abstract.AdministrationAbstract;
 using Osta.SharedKernel.Logging;
 
 namespace Osta.Service.Service.AdministrationServiceFolder

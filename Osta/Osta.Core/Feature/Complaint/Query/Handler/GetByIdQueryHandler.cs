@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using MediatR;
+using Osta.Core.Abstract.AdministrationAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Complaint.Query.Model;
 using Osta.Core.Feature.Complaint.Query.Result;
-using Osta.Service.Abstract.AdministrationAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Core.Feature.Complaint.Query.Handler

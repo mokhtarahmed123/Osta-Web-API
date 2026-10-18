@@ -1,13 +1,9 @@
 ﻿using Hangfire;
-using Osta.BackgroundJobs;
 using Osta.Booking;
-using Osta.Chat;
 using Osta.Chat.Hub;
 using Osta.Core;
-using Osta.Identity;
 using Osta.Infrastructure;
-using Osta.Payment;
-using Osta.Service;
+using Osta.Service.ExtensionMethod;
 namespace Osta.API
 {
     public class Program
@@ -31,14 +27,13 @@ namespace Osta.API
         );
             #endregion
 
-            builder.Services.AddInfrastructureDependencies(builder.Configuration).
-                AddServiceDependencies().AddBookingDependencies().
-                AddBackgroundJobsDependencies(builder.Configuration).
-               AddModuleSharedKernelDependencies().AddIdentityDependencies(builder.Configuration).
-               AddModuleNotificationDependencies(builder.Configuration)
-                .AddModuleCoreDependencies().AddChatDependencies().
-                AddModuleApiDependencies(builder.Configuration).
-                AddModulePaymentDependencies(builder.Configuration);
+            builder.Services.AddInfrastructureDependencies(builder.Configuration).AddBookingDependencies().AddChatDependencies().
+            AddServiceDependencies().AddBackgroundJobsDependencies(builder.Configuration).
+           AddModuleSharedKernelDependencies().AddIdentityDependencies(builder.Configuration).
+           AddModuleNotificationDependencies(builder.Configuration)
+            .AddModuleCoreDependencies().AddChatDependencies().
+            AddModuleApiDependencies(builder.Configuration).
+            AddModulePaymentDependencies(builder.Configuration);
 
 
             var app = builder.Build();

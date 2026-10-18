@@ -1,7 +1,7 @@
 ﻿using MediatR;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Technician.Command.Model.TechnicianModel;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.SharedKernel.Logging;
 
 namespace Osta.Core.Feature.Technician.Command.Handler.TechnicianCommandHandler

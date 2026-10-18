@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Domain.Entities.Technician;
 using Osta.Infrastructure.Abstract.TechnicianAbstract;
 using Osta.Infrastructure.InfrastructureBases;
-using Osta.Service.Abstract.TechnicianAbstract;
 
 namespace Osta.Service.Service.TechnicianServiceFolder
 {

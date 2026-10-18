@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Moq;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Feature.Technician.Query.Handler.TechnicianAvailabilitiesQueryHandler;
 using Osta.Core.Feature.Technician.Query.Model.ModelTechnicianAvailabilities;
 using Osta.Core.Feature.Technician.Query.Result.ResultTechnicianAvailabilities;
 using Osta.Data.Entities.Technician;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.SharedKernel.Logging;
 
 namespace Osta.Test.TechnicianAvailabilitiesTesting.TechnicianAvailabilitiesCommandTesting

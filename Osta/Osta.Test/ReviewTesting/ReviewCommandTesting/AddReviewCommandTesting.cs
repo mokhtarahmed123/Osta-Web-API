@@ -2,13 +2,13 @@
 using Microsoft.AspNetCore.Identity;
 using Moq;
 using Osta.Booking.Interface;
+using Osta.Core.Abstract.ReviewAbstract;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Feature.Review.Command.Handler;
 using Osta.Core.Feature.Review.Command.Model;
 using Osta.Data.Entities.Booking;
 using Osta.Data.Entities.Identity;
 using Osta.Data.Enum;
-using Osta.Service.Abstract.ReviewAbstract;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Test.ReviewTesting.ReviewCommandTesting

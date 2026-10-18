@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using Moq;
+using Osta.Core.Abstract.CustomerAbstract;
 using Osta.Core.Feature.FavoriteTechnician.Query.Handler;
 using Osta.Core.Feature.FavoriteTechnician.Query.Model;
 using Osta.Core.Feature.FavoriteTechnician.Query.Result;
-using Osta.Service.Abstract.CustomerAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Test.FavoriteTechnicianTesting

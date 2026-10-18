@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Osta.Infrastructure.Caching;
-using System.IdentityModel.Tokens.Jwt;
+using Osta.SharedKernel.Caching;
 
 public class BlacklistCheckMiddleware(RequestDelegate next)
 {
     public async Task InvokeAsync(HttpContext context, ICacheService cacheService)
     {
-        var jti = context.User.FindFirst(JwtRegisteredClaimNames.Jti)?.Value;
+        var jti = context.User.FindFirst(System.IdentityModel.Tokens.Jwt.JwtRegisteredClaimNames.Jti)?.Value;
 
         if (!string.IsNullOrEmpty(jti))
         {

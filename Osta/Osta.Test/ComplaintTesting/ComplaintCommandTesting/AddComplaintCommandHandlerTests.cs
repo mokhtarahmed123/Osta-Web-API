@@ -2,11 +2,11 @@
 using AutoMapper;
 using Moq;
 using Osta.Booking.Interface;
+using Osta.Core.Abstract.AdministrationAbstract;
 using Osta.Core.Feature.Complaint.Command.Handler;
 using Osta.Core.Feature.Complaint.Command.Model;
 using Osta.Data.Entities.Booking;
 using Osta.Data.Enum;
-using Osta.Service.Abstract.AdministrationAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Test.ComplaintTesting.ComplaintCommandTesting

@@ -1,8 +1,8 @@
-﻿using Osta.Data.Entities.Technician;
+﻿using Osta.Core.Abstract.TechnicianAbstract;
+using Osta.Data.Entities.Technician;
 using Osta.Infrastructure.Abstract.TechnicianAbstract;
-using Osta.Infrastructure.Caching;
 using Osta.Infrastructure.InfrastructureBases;
-using Osta.Service.Abstract.TechnicianAbstract;
+using Osta.SharedKernel.Caching;
 using Osta.SharedKernel.Logging;
 
 namespace Osta.Service.Service.TechnicianServiceFolder

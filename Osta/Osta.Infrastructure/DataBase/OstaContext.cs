@@ -43,7 +43,7 @@ namespace Osta.Infrastructure.DataBase
         public DbSet<BookingService> BookingServices { get; set; }
         public DbSet<TechnicianAvailability> TechnicianAvailabilities { get; set; }
         public DbSet<Review> Reviews { get; set; }
-        public DbSet<Payment> Payments { get; set; }
+        public DbSet<Osta.Data.Entities.Payment> Payments { get; set; }
 
 
 
@@ -76,6 +76,8 @@ namespace Osta.Infrastructure.DataBase
             builder.Entity<IdentityUserToken<string>>().ToTable("AspNetUserTokens", "Identity");
             builder.Entity<IdentityRoleClaim<string>>().ToTable("AspNetRoleClaims", "Identity");
 
+
+            #region Configuration
             builder.ApplyConfiguration(new CouponUsageConfiguration());
             builder.ApplyConfiguration(new TechnicianEarningConfiguration());
             builder.ApplyConfiguration(new TechnicianWalletConfiguration());
@@ -99,6 +101,8 @@ namespace Osta.Infrastructure.DataBase
             builder.ApplyConfiguration(new TechniciansConfiguration());
             builder.ApplyConfiguration(new TechnicianServiceConfiguration());
             builder.ApplyConfiguration(new TechnicianServiceAreaConfiguration());
+
+            #endregion
 
             builder.Entity<Permission>()
                 .HasData(PermissionSeeder.GetPermissions());

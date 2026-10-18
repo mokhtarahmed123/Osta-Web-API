@@ -1,12 +1,12 @@
 ﻿using MediatR;
 using Osta.Booking.Interface;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Data.Enum;
 using Osta.Domain.Entities.Technician;
-using Osta.Infrastructure.Abstract.PaymentAbstract;
 using Osta.Infrastructure.InfrastructureBases;
 using Osta.Payment.CouponService;
+using Osta.Payment.CouponUsageService;
 using Osta.Payment.Services;
-using Osta.Service.Abstract.TechnicianAbstract;
 
 namespace Osta.Core.Feature.Payment.Command
 {
@@ -14,29 +14,30 @@ namespace Osta.Core.Feature.Payment.Command
         : IRequestHandler<HandleStripeWebhookCommand>
     {
         private readonly IPaymentService _paymentService;
-        private readonly IPaymentRepository _paymentRepository;
+
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IUsageCouponsRepository _usageCouponsRepository;
+
         private readonly ICouponService _couponService;
         private readonly ITechnicianEarningService technicianEarningService;
         private readonly IBookingService bookingService;
         private readonly ITechnicianWalletService technicianWalletService;
+        private readonly ICouponUsageService couponUsageService;
 
         public HandleStripeWebhookCommandHandler(
             IPaymentService paymentService,
-            IPaymentRepository paymentRepository,
+
             IUnitOfWork unitOfWork,
-            IUsageCouponsRepository usageCouponsRepository,
-            ICouponService couponService, ITechnicianEarningService technicianEarningService, IBookingService bookingService, ITechnicianWalletService technicianWalletService)
+
+            ICouponService couponService, ITechnicianEarningService technicianEarningService, IBookingService bookingService, ITechnicianWalletService technicianWalletService, ICouponUsageService couponUsageService)
         {
             _paymentService = paymentService;
-            _paymentRepository = paymentRepository;
+
             _unitOfWork = unitOfWork;
-            _usageCouponsRepository = usageCouponsRepository;
             _couponService = couponService;
             this.technicianEarningService = technicianEarningService;
             this.bookingService = bookingService;
             this.technicianWalletService = technicianWalletService;
+            this.couponUsageService = couponUsageService;
         }
 
         public async Task Handle(
@@ -90,8 +91,8 @@ namespace Osta.Core.Feature.Payment.Command
             }
 
             var payment =
-                await _paymentRepository
-                    .GetByTransactionIdAsync(transactionId);
+                await _paymentService
+                    .GetByTransactionIdAsync(transactionId, ct);
 
             var book = await bookingService.GetBookingById(payment.BookingId);
             if (book is null)
@@ -161,7 +162,7 @@ namespace Osta.Core.Feature.Payment.Command
                                     UserId = book.CustomerId,
                                 };
 
-                            await _usageCouponsRepository
+                            await couponUsageService
                                 .AddAsync(usageCoupon, ct);
 
                             // =================================

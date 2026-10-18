@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using Moq;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Feature.ServiceArea.Command.Handler;
 using Osta.Core.Feature.ServiceArea.Command.Model;
 using Osta.Data.Entities.Technician;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.SharedKernel.Logging;
 using System.Net;
 

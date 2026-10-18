@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Http;
+using Osta.Core.Abstract.ServicesAbstract;
 using Osta.Core.Feature.Service.Command.Model;
-using Osta.Service.Abstract.ServicesAbstract;
 
 namespace Osta.Core.Feature.Service.Command.Validation
 {

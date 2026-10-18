@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using MediatR;
+using Osta.Core.Abstract.ServicesAbstract;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Technician.Query.Model.ModelTechnicianService;
 using Osta.Core.Feature.Technician.Query.Result.ResultTechnicianService;
-using Osta.Service.Abstract.ServicesAbstract;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.SharedKernel.Logging;
 
 namespace Osta.Core.Feature.Technician.Query.Handler.TechnicianServiceQueryHandler

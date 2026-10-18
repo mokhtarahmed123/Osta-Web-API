@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.HandlerMiddleware;
 using Osta.Domain.Entities.Technician;
 using Osta.Infrastructure.Abstract.TechnicianAbstract;
 using Osta.Infrastructure.InfrastructureBases;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.Service.Model;
 using Osta.SharedKernel;
 using Osta.SharedKernel.Logging;

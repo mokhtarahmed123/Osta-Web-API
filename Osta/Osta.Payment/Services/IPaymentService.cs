@@ -15,6 +15,13 @@ namespace Osta.Payment.Services
     decimal amount,
     CancellationToken cancellationToken);
 
+        Task<Osta.Data.Entities.Payment> GetByBookingIdAsync(int bookingId);
+
+        Task UpdateAsync(Osta.Data.Entities.Payment payment, CancellationToken cancellationToken);
+
+        Task Add(Osta.Data.Entities.Payment payment, CancellationToken cancellationToken);
+        Task<Osta.Data.Entities.Payment> GetByIdAsync(int ID, CancellationToken cancellationToken);
+        Task<Osta.Data.Entities.Payment> GetByTransactionIdAsync(string ID, CancellationToken cancellationToken);
 
     }
 }

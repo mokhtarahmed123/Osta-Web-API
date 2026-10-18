@@ -5,8 +5,6 @@ using Osta.Core.HandlerMiddleware;
 using Osta.Data.Entities.Identity;
 using Osta.Data.Enum;
 using Osta.Domain.Enum;
-using Osta.Infrastructure.Abstract.PaymentAbstract;
-using Osta.Infrastructure.InfrastructureBases;
 using Osta.Payment.CouponService;
 using Osta.Payment.Model;
 using Osta.Payment.Services;
@@ -19,23 +17,19 @@ namespace Osta.Core.Feature.Payment.Command
         : IRequestHandler<CreatePaymentIntentCommand, PaymentIntentResult>
     {
         private readonly IPaymentService paymentService;
-        private readonly IPaymentRepository paymentRepository;
-        private readonly IUnitOfWork unitOfWork;
+
+
         private readonly ICurrentUserService currentUserService;
         private readonly UserManager<User> userManager;
         private readonly ICouponService couponService;
 
         public CreatePaymentIntentCommandHandler(
             IPaymentService paymentService,
-            IPaymentRepository paymentRepository,
-            IUnitOfWork unitOfWork,
             ICurrentUserService currentUserService,
             UserManager<User> userManager,
             ICouponService couponService)
         {
             this.paymentService = paymentService;
-            this.paymentRepository = paymentRepository;
-            this.unitOfWork = unitOfWork;
             this.currentUserService = currentUserService;
             this.userManager = userManager;
             this.couponService = couponService;
@@ -74,7 +68,7 @@ namespace Osta.Core.Feature.Payment.Command
             // =========================
             // Check Existing Payment
             // =========================
-            var existingPayment = await paymentRepository.GetByBookingIdAsync(request.BookingId);
+            var existingPayment = await paymentService.GetByBookingIdAsync(request.BookingId);
 
             if (existingPayment is not null)
             {
@@ -87,8 +81,8 @@ namespace Osta.Core.Feature.Payment.Command
                         existingPayment.TransactionId, finalAmount, cancellationToken);
 
                     existingPayment.Amount = finalAmount;
-                    await paymentRepository.UpdateAsync(existingPayment, cancellationToken);
-                    await unitOfWork.SaveChangesAsync();
+                    await paymentService.UpdateAsync(existingPayment, cancellationToken);
+
 
                     return result;
                 }
@@ -118,9 +112,7 @@ namespace Osta.Core.Feature.Payment.Command
                 CreatedAt = DateTime.UtcNow
             };
 
-            await paymentRepository.AddAsync(payment, cancellationToken);
-
-            await unitOfWork.SaveChangesAsync();
+            await paymentService.Add(payment, cancellationToken);
 
             return paymentIntent;
         }

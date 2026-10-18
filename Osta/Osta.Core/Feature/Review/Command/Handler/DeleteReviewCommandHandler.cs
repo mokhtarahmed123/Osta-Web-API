@@ -1,11 +1,11 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Osta.Booking.Interface;
+using Osta.Core.Abstract.ReviewAbstract;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Review.Command.Model;
 using Osta.Data.Entities.Identity;
-using Osta.Service.Abstract.ReviewAbstract;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Core.Feature.Review.Command.Handler

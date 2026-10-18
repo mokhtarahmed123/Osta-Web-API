@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Osta.Core.Abstract.ServicesAbstract;
 using Osta.Data.Entities;
 using Osta.Infrastructure.Abstract.ServicesAbstract;
 using Osta.Infrastructure.InfrastructureBases;
-using Osta.Service.Abstract.ServicesAbstract;
 using Osta.SharedKernel.Logging;
 
 namespace Osta.Service.Service.ServicesServiceFolder

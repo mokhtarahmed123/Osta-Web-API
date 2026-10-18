@@ -7,8 +7,6 @@ using Osta.Data.Entities.Identity;
 using Osta.Data.Enum;
 using Osta.Domain.Entities.Customer;
 using Osta.Domain.Enum;
-using Osta.Infrastructure.Abstract.PaymentAbstract;
-using Osta.Infrastructure.InfrastructureBases;
 using Osta.Payment.CouponService;
 using Osta.Payment.Model;
 using Osta.Payment.Services;
@@ -19,8 +17,6 @@ namespace Osta.Test.CoreTetsing.PaymentTesting.Command
     public class CreatePaymentIntentCommandHandlerTests
     {
         private readonly Mock<IPaymentService> _paymentServiceMock;
-        private readonly Mock<IPaymentRepository> _paymentRepositoryMock;
-        private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Mock<ICurrentUserService> _currentUserServiceMock;
         private readonly Mock<UserManager<User>> _userManagerMock;
         private readonly Mock<ICouponService> _couponServiceMock;
@@ -30,8 +26,6 @@ namespace Osta.Test.CoreTetsing.PaymentTesting.Command
         public CreatePaymentIntentCommandHandlerTests()
         {
             _paymentServiceMock = new Mock<IPaymentService>();
-            _paymentRepositoryMock = new Mock<IPaymentRepository>();
-            _unitOfWorkMock = new Mock<IUnitOfWork>();
             _currentUserServiceMock = new Mock<ICurrentUserService>();
             _couponServiceMock = new Mock<ICouponService>();
 
@@ -50,8 +44,8 @@ namespace Osta.Test.CoreTetsing.PaymentTesting.Command
 
             _handler = new CreatePaymentIntentCommandHandler(
                 _paymentServiceMock.Object,
-                _paymentRepositoryMock.Object,
-                _unitOfWorkMock.Object,
+
+
                 _currentUserServiceMock.Object,
                 _userManagerMock.Object,
                 _couponServiceMock.Object);
@@ -78,7 +72,7 @@ namespace Osta.Test.CoreTetsing.PaymentTesting.Command
             await Assert.ThrowsAsync<UnauthorizedAccessException>(() =>
                 _handler.Handle(command, CancellationToken.None));
 
-            _paymentRepositoryMock.Verify(
+            _paymentServiceMock.Verify(
                 x => x.GetByBookingIdAsync(It.IsAny<int>()),
                 Times.Never);
 
@@ -116,7 +110,7 @@ namespace Osta.Test.CoreTetsing.PaymentTesting.Command
             await Assert.ThrowsAsync<Osta.SharedKernel.Exceptions.BadRequestException>(() =>
                 _handler.Handle(command, CancellationToken.None));
 
-            _paymentRepositoryMock.Verify(
+            _paymentServiceMock.Verify(
                 x => x.GetByBookingIdAsync(It.IsAny<int>()),
                 Times.Never);
 
@@ -144,7 +138,7 @@ namespace Osta.Test.CoreTetsing.PaymentTesting.Command
                 .Setup(x => x.UserId)
                 .Returns(userId);
 
-            _paymentRepositoryMock
+            _paymentServiceMock
                 .Setup(x => x.GetByBookingIdAsync(1))
                 .ReturnsAsync((Osta.Data.Entities.Payment?)null);
 
@@ -185,8 +179,8 @@ namespace Osta.Test.CoreTetsing.PaymentTesting.Command
                     It.IsAny<CancellationToken>()),
                 Times.Once);
 
-            _paymentRepositoryMock.Verify(
-                x => x.AddAsync(
+            _paymentServiceMock.Verify(
+                x => x.Add(
                     It.Is<Osta.Data.Entities.Payment>(p =>
                         p.BookingId == 1 &&
                         p.Amount == 500 &&
@@ -196,9 +190,7 @@ namespace Osta.Test.CoreTetsing.PaymentTesting.Command
                     It.IsAny<CancellationToken>()),
                 Times.Once);
 
-            _unitOfWorkMock.Verify(
-                x => x.SaveChangesAsync(),
-                Times.Once);
+
         }
 
         // ============================================================
@@ -569,7 +561,7 @@ namespace Osta.Test.CoreTetsing.PaymentTesting.Command
                     It.IsAny<CancellationToken>()))
                 .ReturnsAsync(false);
 
-            _paymentRepositoryMock
+            _paymentServiceMock
                 .Setup(x => x.GetByBookingIdAsync(1))
                 .ReturnsAsync((Osta.Data.Entities.Payment?)null);
 
@@ -656,7 +648,7 @@ namespace Osta.Test.CoreTetsing.PaymentTesting.Command
                     It.IsAny<CancellationToken>()))
                 .ReturnsAsync(false);
 
-            _paymentRepositoryMock
+            _paymentServiceMock
                 .Setup(x => x.GetByBookingIdAsync(1))
                 .ReturnsAsync((Osta.Data.Entities.Payment?)null);
 
@@ -719,7 +711,7 @@ namespace Osta.Test.CoreTetsing.PaymentTesting.Command
                 TransactionId = "pi_old"
             };
 
-            _paymentRepositoryMock
+            _paymentServiceMock
                 .Setup(x => x.GetByBookingIdAsync(1))
                 .ReturnsAsync(existingPayment);
 
@@ -763,7 +755,7 @@ namespace Osta.Test.CoreTetsing.PaymentTesting.Command
                 TransactionId = "pi_existing"
             };
 
-            _paymentRepositoryMock
+            _paymentServiceMock
                 .Setup(x => x.GetByBookingIdAsync(1))
                 .ReturnsAsync(existingPayment);
 
@@ -801,18 +793,16 @@ namespace Osta.Test.CoreTetsing.PaymentTesting.Command
                     It.IsAny<CancellationToken>()),
                 Times.Once);
 
-            _paymentRepositoryMock.Verify(
+            _paymentServiceMock.Verify(
                 x => x.UpdateAsync(
                     existingPayment,
                     It.IsAny<CancellationToken>()),
                 Times.Once);
 
-            _unitOfWorkMock.Verify(
-                x => x.SaveChangesAsync(),
-                Times.Once);
 
-            _paymentRepositoryMock.Verify(
-                x => x.AddAsync(
+
+            _paymentServiceMock.Verify(
+                x => x.Add(
                     It.IsAny<Osta.Data.Entities.Payment>(),
                     It.IsAny<CancellationToken>()),
                 Times.Never);
@@ -874,7 +864,7 @@ namespace Osta.Test.CoreTetsing.PaymentTesting.Command
                 TransactionId = "pi_existing"
             };
 
-            _paymentRepositoryMock
+            _paymentServiceMock
                 .Setup(x => x.GetByBookingIdAsync(1))
                 .ReturnsAsync(existingPayment);
 
@@ -911,15 +901,13 @@ namespace Osta.Test.CoreTetsing.PaymentTesting.Command
                     It.IsAny<CancellationToken>()),
                 Times.Once);
 
-            _paymentRepositoryMock.Verify(
+            _paymentServiceMock.Verify(
                 x => x.UpdateAsync(
                     existingPayment,
                     It.IsAny<CancellationToken>()),
                 Times.Once);
 
-            _unitOfWorkMock.Verify(
-                x => x.SaveChangesAsync(),
-                Times.Once);
+
         }
 
         // ============================================================
@@ -971,7 +959,7 @@ namespace Osta.Test.CoreTetsing.PaymentTesting.Command
                 .Setup(x => x.UserId)
                 .Returns(userId);
 
-            _paymentRepositoryMock
+            _paymentServiceMock
                 .Setup(x => x.GetByBookingIdAsync(1))
                 .ReturnsAsync((Osta.Data.Entities.Payment?)null);
 

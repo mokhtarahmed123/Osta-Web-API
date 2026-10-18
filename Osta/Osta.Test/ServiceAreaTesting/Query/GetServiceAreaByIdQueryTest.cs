@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Moq;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Feature.ServiceArea.Query.Handler;
 using Osta.Core.Feature.ServiceArea.Query.Model;
 using Osta.Core.Feature.ServiceArea.Query.Result;
 using Osta.Data.Entities.Technician;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.SharedKernel.Logging;
 using System.Net;
 

@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Moq;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Feature.Technician.Command.Handler.TechnicianPayoutCommandHandler;
 using Osta.Core.Feature.Technician.Command.Model.TechnicianPayout;
 using Osta.Data.Entities.Identity;
 using Osta.Domain.Entities.Technician;
 using Osta.Notification.DTOs;
 using Osta.Notification.Queue;
-using Osta.Service.Abstract.TechnicianAbstract;
 
 namespace Osta.Test.TechnicianPayoutTesting.TechnicianPayoutCommandTesting
 {

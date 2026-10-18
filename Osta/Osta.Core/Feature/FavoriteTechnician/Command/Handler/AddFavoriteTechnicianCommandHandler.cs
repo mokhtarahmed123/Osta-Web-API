@@ -1,7 +1,7 @@
 ﻿using MediatR;
+using Osta.Core.Abstract.CustomerAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.FavoriteTechnician.Command.Model;
-using Osta.Service.Abstract.CustomerAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Core.Feature.FavoriteTechnician.Command.Handler

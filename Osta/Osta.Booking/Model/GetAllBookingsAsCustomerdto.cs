@@ -10,9 +10,7 @@
 
         public required string CustomerName { get; set; }
         public required string CustomerEmail { get; set; }
-
         public required string Status { get; set; }
-
         public required string Area { get; set; }
         public required string City { get; set; }
         public required string Governorate { get; set; }

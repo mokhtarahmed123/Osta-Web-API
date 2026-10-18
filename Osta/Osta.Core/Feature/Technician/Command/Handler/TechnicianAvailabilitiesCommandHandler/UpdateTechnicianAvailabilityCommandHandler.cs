@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using MediatR;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Technician.Command.Model.ModelTechnicianAvailabilities;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.SharedKernel.Identity;
 using Osta.SharedKernel.Logging;
 

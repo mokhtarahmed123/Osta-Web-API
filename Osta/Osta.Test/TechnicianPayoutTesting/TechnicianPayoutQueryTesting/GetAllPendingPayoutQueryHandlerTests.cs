@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using Moq;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Feature.Technician.Query.Handler.TechnicianPayoutQueryHandler;
 using Osta.Core.Feature.Technician.Query.Model.ModelTechnicianPayout;
 using Osta.Core.Feature.Technician.Query.Result.ResultTechnicianPayout;
 using Osta.Domain.Entities.Technician;
 using Osta.Domain.Enum;
-using Osta.Service.Abstract.TechnicianAbstract;
 
 namespace Osta.Test.TechnicianPayoutTesting.TechnicianPayoutQueryTesting
 {

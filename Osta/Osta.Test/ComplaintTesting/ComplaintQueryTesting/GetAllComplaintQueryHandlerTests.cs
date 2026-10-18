@@ -1,10 +1,10 @@
 ﻿
 using AutoMapper;
 using Moq;
+using Osta.Core.Abstract.AdministrationAbstract;
 using Osta.Core.Feature.Complaint.Query.Handler;
 using Osta.Core.Feature.Complaint.Query.Model;
 using Osta.Core.Feature.Complaint.Query.Result;
-using Osta.Service.Abstract.AdministrationAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Test.ComplaintTesting.ComplaintQueryTesting

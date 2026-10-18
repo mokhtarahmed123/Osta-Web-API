@@ -1,13 +1,13 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Osta.Booking.Interface;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Booking.Command.Model.TechnicianModel;
 using Osta.Data.Entities.Identity;
 using Osta.Data.Enum;
 using Osta.Notification.DTOs;
 using Osta.Notification.Queue;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Core.Feature.Booking.Command.Handler.TechnicianBookingCommandHandler

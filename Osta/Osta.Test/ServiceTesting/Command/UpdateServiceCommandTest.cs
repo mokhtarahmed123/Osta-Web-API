@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Moq;
+using Osta.Core.Abstract.ServicesAbstract;
 using Osta.Core.Feature.Service.Command.Handler;
 using Osta.Core.Feature.Service.Command.Model;
-using Osta.Service.Abstract.ServicesAbstract;
 using Osta.SharedKernel.Logging;
 
 namespace Osta.Test.ServiceTesting.Command

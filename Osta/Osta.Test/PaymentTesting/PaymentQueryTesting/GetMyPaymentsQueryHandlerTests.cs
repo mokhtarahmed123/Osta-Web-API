@@ -1,5 +1,7 @@
 ﻿using Moq;
 using Osta.Core.Feature.Payment.Query;
+using Osta.Payment.Model;
+using Osta.Payment.Services;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Test.PaymentTesting.PaymentQueryTesting

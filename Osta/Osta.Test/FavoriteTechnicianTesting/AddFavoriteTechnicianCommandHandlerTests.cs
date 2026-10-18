@@ -1,7 +1,7 @@
 ﻿using Moq;
+using Osta.Core.Abstract.CustomerAbstract;
 using Osta.Core.Feature.FavoriteTechnician.Command.Handler;
 using Osta.Core.Feature.FavoriteTechnician.Command.Model;
-using Osta.Service.Abstract.CustomerAbstract;
 using Osta.SharedKernel.Identity;
 using System.Net;
 

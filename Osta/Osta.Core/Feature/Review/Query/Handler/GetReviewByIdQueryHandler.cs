@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using MediatR;
+using Osta.Core.Abstract.ReviewAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Review.Query.Model;
 using Osta.Core.Feature.Review.Query.Result;
-using Osta.Service.Abstract.ReviewAbstract;
 
 namespace Osta.Core.Feature.Review.Query.Handler
 {

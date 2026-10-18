@@ -6,7 +6,7 @@ using Osta.Core.Feature.Authentication.Command.Model.AuthModel;
 using Osta.Data.Entities.Identity;
 using Osta.Identity.Authentication;
 using Osta.Identity.TokenBlacklistService;
-using Osta.Infrastructure.Caching;
+using Osta.SharedKernel.Caching;
 using Osta.SharedKernel.Identity;
 using System.IdentityModel.Tokens.Jwt;
 

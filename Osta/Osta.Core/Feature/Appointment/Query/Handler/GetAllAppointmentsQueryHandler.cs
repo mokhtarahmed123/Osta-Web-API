@@ -2,11 +2,11 @@
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Osta.Booking.Interface;
+using Osta.Core.Abstract.AppointmentAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Appointment.Query.Model;
 using Osta.Core.Feature.Appointment.Query.Result;
 using Osta.Data.Entities.Identity;
-using Osta.Service.Abstract.AppointmentAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Core.Feature.Appointment.Query.Handler
@@ -15,7 +15,6 @@ namespace Osta.Core.Feature.Appointment.Query.Handler
     {
         private readonly IMapper mapper;
         private readonly IAppointmentService appointmentService;
-
         private readonly ICurrentUserService currentUserService;
 
 

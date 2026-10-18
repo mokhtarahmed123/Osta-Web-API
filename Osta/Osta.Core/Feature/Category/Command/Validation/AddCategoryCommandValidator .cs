@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
+using Osta.Core.Abstract.ServicesAbstract;
 using Osta.Core.Feature.Category.Command.Model;
-using Osta.Service.Abstract.ServicesAbstract;
 
 namespace Osta.Core.Feature.Category.Command.Validation
 {

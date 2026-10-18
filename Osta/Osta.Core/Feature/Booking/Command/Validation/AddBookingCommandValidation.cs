@@ -1,8 +1,8 @@
 ﻿
 using FluentValidation;
+using Osta.Core.Abstract.ServicesAbstract;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Feature.Booking.Command.Model.CustomerModel;
-using Osta.Service.Abstract.ServicesAbstract;
-using Osta.Service.Abstract.TechnicianAbstract;
 
 namespace Osta.Core.Feature.Booking.Command.Validation
 {

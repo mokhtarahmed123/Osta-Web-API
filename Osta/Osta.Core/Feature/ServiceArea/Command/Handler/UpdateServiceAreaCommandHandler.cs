@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using MediatR;
+using Osta.Core.Abstract.TechnicianAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.ServiceArea.Command.Model;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.SharedKernel.Logging;
 
 namespace Osta.Core.Feature.ServiceArea.Command.Handler

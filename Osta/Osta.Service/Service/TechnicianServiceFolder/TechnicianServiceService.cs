@@ -1,6 +1,6 @@
-﻿using Osta.Infrastructure.Abstract.TechnicianAbstract;
+﻿using Osta.Core.Abstract.TechnicianAbstract;
+using Osta.Infrastructure.Abstract.TechnicianAbstract;
 using Osta.Infrastructure.InfrastructureBases;
-using Osta.Service.Abstract.TechnicianAbstract;
 using Osta.SharedKernel.Logging;
 
 namespace Osta.Service.Service.TechnicianServiceFolder

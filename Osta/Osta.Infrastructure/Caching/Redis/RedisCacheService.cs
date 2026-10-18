@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Caching.Distributed;
+using Osta.SharedKernel.Caching;
 using System.Text.Json;
 
 namespace Osta.Infrastructure.Caching.Redis

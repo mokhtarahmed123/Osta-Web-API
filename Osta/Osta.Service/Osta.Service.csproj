@@ -7,8 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Osta.BackgroundJobs\Osta.BackgroundJobs.csproj" />
+    <ProjectReference Include="..\Osta.Booking\Osta.Booking.csproj" />
+    <ProjectReference Include="..\Osta.Chat\Osta.Chat.csproj" />
+    <ProjectReference Include="..\Osta.Core\Osta.Core.csproj" />
     <ProjectReference Include="..\Osta.Data\Osta.Domain.csproj" />
+    <ProjectReference Include="..\Osta.Identity\Osta.Identity.csproj" />
     <ProjectReference Include="..\Osta.Infrastructure\Osta.Infrastructure.csproj" />
+    <ProjectReference Include="..\Osta.Notification\Osta.Notification.csproj" />
+    <ProjectReference Include="..\Osta.Payment\Osta.Payment.csproj" />
     <ProjectReference Include="..\Osta.SharedKernel\Osta.SharedKernel.csproj" />
   </ItemGroup>
 

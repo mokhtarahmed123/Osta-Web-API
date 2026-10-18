@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using MediatR;
+using Osta.Core.Abstract.CustomerAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.FavoriteTechnician.Query.Model;
 using Osta.Core.Feature.FavoriteTechnician.Query.Result;
-using Osta.Service.Abstract.CustomerAbstract;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Core.Feature.FavoriteTechnician.Query.Handler

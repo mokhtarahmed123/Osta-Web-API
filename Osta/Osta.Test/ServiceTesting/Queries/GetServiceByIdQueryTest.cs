@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using Moq;
+using Osta.Core.Abstract.ServicesAbstract;
 using Osta.Core.Feature.Service.Query.Handler;
 using Osta.Core.Feature.Service.Query.Model;
 using Osta.Core.Feature.Service.Query.Result;
-using Osta.Service.Abstract.ServicesAbstract;
 using Osta.SharedKernel.Logging;
 
 namespace Osta.Test.ServiceTesting.Queries

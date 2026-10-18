@@ -1,9 +1,9 @@
 ﻿using MediatR;
+using Osta.Core.Abstract.AppointmentAbstract;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Appointment.Command.Model.AppointmentJobMdoel;
 using Osta.Notification.DTOs;
 using Osta.Notification.Queue;
-using Osta.Service.Abstract.AppointmentAbstract;
 using Osta.SharedKernel.Logging;
 
 namespace Osta.Core.Feature.Appointment.Command.Handler

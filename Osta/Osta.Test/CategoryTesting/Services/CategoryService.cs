@@ -4,10 +4,10 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Moq;
 using Osta.Data.Entities.Services;
 using Osta.Infrastructure.Abstract.ServicesAbstract;
-using Osta.Infrastructure.Caching;
 using Osta.Infrastructure.InfrastructureBases;
 using Osta.Service.Service.ServicesServiceFolder;
 using Osta.SharedKernel;
+using Osta.SharedKernel.Caching;
 using Osta.SharedKernel.Logging;
 
 namespace Osta.Test.CategoryTesting.Services

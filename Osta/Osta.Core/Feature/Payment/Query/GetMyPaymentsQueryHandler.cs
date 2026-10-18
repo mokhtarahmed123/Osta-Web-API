@@ -1,5 +1,7 @@
 ﻿using MediatR;
 using Osta.Core.Bases;
+using Osta.Payment.Model;
+using Osta.Payment.Services;
 using Osta.SharedKernel.Identity;
 
 namespace Osta.Core.Feature.Payment.Query
