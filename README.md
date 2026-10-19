@@ -48,31 +48,49 @@ Osta connects **customers** with **technicians** in a fast, secure, and organize
 
 ## Project structure
 
-The solution is a **Modular Monolith** split across the following projects:
+The solution is a **Modular Monolith** (Clean Architecture, CQRS) split across the following projects:
 
 ```
 Osta.sln
-├── Osta.API                  → ASP.NET Core Web API (controllers, Swagger, SignalR Hub, Hangfire dashboard). References Osta.Core only.
-├── Osta.Core                  → Composition root; hosts all Command/Query handlers and validators; aggregates DI for every layer below.
-├── Osta.Service               → Business logic for Category, Service, ServiceArea, Technician, Review, Complaint, FavoriteTechnician, Technician Earnings/Payout/Wallet.
-├── Osta.Booking                → Booking domain logic (create/confirm/refuse/cancel/complete) + Appointment scheduling with overlap prevention.
+├── Osta.API                  → ASP.NET Core Web API (controllers, Swagger, SignalR Hub, Hangfire dashboard). Composition root: references Osta.Core and Osta.Service.
+├── Osta.Core                  → Application layer: Command/Query handlers, validators, mapping, and DI aggregation. Depends on the module projects for their interfaces/contracts.
+├── Osta.Service               → Implements the interfaces consumed by Osta.Core. Business logic for Category, Service, ServiceArea, Technician, Review, Complaint, FavoriteTechnician, Technician Earnings/Payout/Wallet.
+├── Osta.Booking                → Booking contracts and logic (create/confirm/refuse/cancel/complete) + Appointment scheduling with overlap prevention.
+├── Osta.Chat                    → Chat contracts and real-time delivery abstractions (SignalR).
 ├── Osta.Payment                 → Stripe adapter (Payment Intents, webhook signature verification, refunds). No database access — pure external-service integration.
-├── Osta.Notification            → Notification DTOs + RabbitMQ publisher abstraction.
+├── Osta.BackgroundJobs           → Hangfire jobs (appointment reminders).
+├── Osta.Notification            → Notification DTOs, RabbitMQ publisher abstraction, and email delivery (MailKit).
 ├── Osta.Notification.Worker      → Standalone BackgroundService host; consumes RabbitMQ messages (e.g. payout-completed) and dispatches email.
-├── Osta.Infrastructure            → EF Core DbContext, repositories, Redis cache integration, Hangfire configuration, external service integrations.
+├── Osta.Infrastructure            → EF Core DbContext, entity configurations, repositories, Redis cache integration, external service integrations.
 ├── Osta.Identity                   → ASP.NET Core Identity, JWT issuing/validation, Google OAuth, RBAC.
-├── Osta.Domain                      → Domain entities & enums. Zero outgoing references.
+├── Osta.Domain                      → Domain entities & enums (folder: Osta.Data). No project references.
 ├── Osta.SharedKernel                 → Base types, Response/error wrappers, common exceptions. Near-zero dependencies.
 └── Osta.Test                          → Unit / integration tests.
 ```
 
-Dependency direction (inner → outer):
+Project references (as declared in the `.csproj` files):
 
 ```
-SharedKernel → Domain → Identity → Infrastructure → {Service, Booking, Payment, Notification} → Core → API
+Osta.API            → Osta.Core, Osta.Service
+Osta.Core           → Osta.Booking, Osta.Chat, Osta.Payment, Osta.Identity, Osta.BackgroundJobs
+Osta.Service        → Osta.Core, Osta.Infrastructure, Osta.Booking, Osta.Chat, Osta.Payment,
+                      Osta.Identity, Osta.Notification, Osta.BackgroundJobs, Osta.Domain, Osta.SharedKernel
+Osta.Booking        → Osta.Domain
+Osta.Chat           → Osta.Domain, Osta.SharedKernel
+Osta.Payment        → Osta.Domain
+Osta.BackgroundJobs → Osta.Domain
+Osta.Identity       → Osta.Domain, Osta.Notification
+Osta.Infrastructure → Osta.Domain, Osta.SharedKernel
+Osta.Notification   → (none)
+Osta.Domain         → (none)
 ```
 
-`Osta.Domain` and `Osta.SharedKernel` sit at the bottom with no outgoing references, so business rules stay independent of frameworks and infrastructure — the API only ever depends on `Osta.Core`. `Osta.Payment` deliberately has no DB dependency, keeping the payment gateway swappable behind `IPaymentService`.
+How the pieces fit together:
+
+- `Osta.Core` (handlers) depends on interfaces defined in the module projects; `Osta.Service` implements them. `Osta.Core` never references `Osta.Service`, so the dependency direction stays inverted.
+- `Osta.API` is the composition root: it references both `Osta.Core` and `Osta.Service` and registers the implementations in DI.
+- `Osta.Booking`, `Osta.Chat`, `Osta.Payment`, and `Osta.BackgroundJobs` do not reference each other — they only depend on `Osta.Domain` (and `Osta.SharedKernel` for Chat).
+- `Osta.Payment` deliberately has no DB dependency, keeping the payment gateway swappable behind `IPaymentService`.
 
 ## Implementation status
 
@@ -213,6 +231,7 @@ Live endpoints today (see Swagger for the full, versioned list):
 - **RBAC**: authorization is resource+action based (`Permission` / `RolePermission`) rather than plain role checks.
 - **Payment gateway isolation**: `Osta.Payment` implements `IPaymentService` with zero DB coupling — all persistence (Payment record, Coupon usage, Earning creation) is orchestrated by `Osta.Core` handlers, so the gateway itself is swappable.
 - **Async notifications**: command handlers publish lightweight DTOs to RabbitMQ; `Osta.Notification.Worker` — a separate process — consumes and dispatches them, keeping the request path fast and decoupled from email delivery.
+- **Known follow-up (modularity)**: modules currently share a single `Osta.Domain` project and one `DbContext`/database, and `Osta.Identity` still references `Osta.Notification`. Planned: move the email-sender abstraction out of `Osta.Notification`, keep `Osta.Core` dependent on abstractions only, and add architecture tests in `Osta.Test` to enforce the reference rules above.
 - **Known follow-up**: Stripe webhook processing does not yet guard against duplicate event delivery (idempotency by `event.id`) — flagged as next-priority reliability work.
 
 ## Testing
