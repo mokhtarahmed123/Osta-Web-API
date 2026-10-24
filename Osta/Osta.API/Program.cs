@@ -1,8 +1,6 @@
 ﻿using Hangfire;
-using Osta.Booking;
 using Osta.Chat.Hub;
 using Osta.Core;
-using Osta.Infrastructure;
 using Osta.Service.ExtensionMethod;
 namespace Osta.API
 {

@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using Osta.Core.Bases;
 using Osta.Core.Feature.Emails.Command.Model;
-using Osta.Notification.DTOs;
 using Osta.Notification.Interfaces;
+using Osta.SharedKernel.dto;
 
 namespace Osta.Core.Feature.Emails.Command.Handler
 {

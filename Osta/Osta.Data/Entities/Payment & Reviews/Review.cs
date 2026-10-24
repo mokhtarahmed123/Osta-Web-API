@@ -1,10 +1,7 @@
 ﻿using Osta.Data.Entities.Booking;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Osta.Data.Entities
 {
-    [Table("Reviews", Schema = "Review")]
-
     public class Review
     {
         public int Id { get; set; }

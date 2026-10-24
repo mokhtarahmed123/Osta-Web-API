@@ -1,12 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Osta.Domain.Entities.Payment___Reviews;
+﻿using Osta.Domain.Entities.Payment___Reviews;
 using Osta.Domain.Enum;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Osta.Domain.Entities.Customer
 {
-    [Index(nameof(Code), IsUnique = true)]
-    [Table("Coupons", Schema = "Payment")]
+    //[Index(nameof(Code), IsUnique = true)]
     public class Coupons
     {
         public int Id { get; set; }

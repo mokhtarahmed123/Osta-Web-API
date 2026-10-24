@@ -6,7 +6,7 @@ using Osta.Infrastructure.InfrastructureBases;
 
 namespace Osta.Infrastructure.Implementation.ServiceImplementation
 {
-    internal class BookingServicesRepository : GenericRepositoryAsync<BookingService>, IBookingServicesRepository
+    public class BookingServicesRepository : GenericRepositoryAsync<BookingService>, IBookingServicesRepository
     {
         #region Vars / Props
         private readonly DbSet<BookingService> BookingService;

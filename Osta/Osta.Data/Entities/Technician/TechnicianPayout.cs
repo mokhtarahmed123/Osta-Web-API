@@ -1,14 +1,11 @@
 ﻿using Osta.Data.Entities.Technician;
 using Osta.Domain.Enum;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Osta.Domain.Entities.Technician
 {
-
     public class TechnicianPayout
     {
         public int Id { get; set; }
-        [ForeignKey(nameof(Technician))]
         public string TechnicianId { get; set; }
 
         public decimal Amount { get; set; }

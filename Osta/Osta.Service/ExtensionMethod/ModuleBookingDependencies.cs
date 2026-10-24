@@ -3,26 +3,25 @@ using Osta.Booking.Interface;
 using Osta.Booking.Producer;
 using Osta.Booking.Service;
 
-namespace Osta.Booking
+namespace Osta.Service.ExtensionMethod;
+
+public static class ModuleBookingDependencies
 {
-    public static class ModuleBookingDependencies
+    public static IServiceCollection AddBookingDependencies(this IServiceCollection services)
     {
-        public static IServiceCollection AddBookingDependencies(this IServiceCollection services)
-        {
 
 
-            #region Booking 
+        #region Booking 
 
 
-            services.AddScoped<IBookingService, BookingService>();
-            services.AddScoped<IMediaService, MediaService>();
+        services.AddScoped<IBookingService, BookingService>();
+        services.AddScoped<IMediaService, MediaService>();
 
-            services.AddScoped<ISendBookingMessage, SendBookingMessage>();
-            #endregion
+        services.AddScoped<ISendBookingMessage, SendBookingMessage>();
+        #endregion
 
-            return services;
+        return services;
 
 
-        }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Osta.Notification.DTOs
+﻿namespace Osta.SharedKernel.dto
 {
     public record Emaildto(
         string Email,

@@ -7,30 +7,18 @@ namespace Osta.Data.Entities.Technician
 {
     public class Technicians
     {
-
         public string Id { get; set; } = string.Empty;
-
         public User User { get; set; } = null!;
-
-
         public string? Bio { get; set; } = string.Empty;
 
         public bool IsVerified { get; set; } = false;
-
-
         public string NationalId { get; set; } = string.Empty;
         public double Rating { get; set; } = 0;
         public int TotalReviews { get; set; } = 0;
-
         public int CompletedBookings { get; set; } = 0;
-
         public int YearsOfExperience { get; set; }
-
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public string? ReasonOfReject { get; set; }
-
-
-
         public StatusOfTechnicianRequestEnum Status { get; set; }
             = StatusOfTechnicianRequestEnum.None;
 

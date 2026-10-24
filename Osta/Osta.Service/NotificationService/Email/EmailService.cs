@@ -3,8 +3,8 @@ using MailKit.Security;
 using Microsoft.Extensions.Options;
 using MimeKit;
 using Osta.Data.Helper;
-using Osta.Notification.DTOs;
 using Osta.Notification.Interfaces;
+using Osta.SharedKernel.dto;
 using Osta.SharedKernel.Exceptions;
 namespace Osta.Service.NotificationService.Email
 {

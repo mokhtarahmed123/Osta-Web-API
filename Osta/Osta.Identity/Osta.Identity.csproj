@@ -7,14 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.Apis.Auth" Version="1.76.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.14" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Osta.Data\Osta.Domain.csproj" />
-    <ProjectReference Include="..\Osta.Notification\Osta.Notification.csproj" />
   </ItemGroup>
 
 </Project>

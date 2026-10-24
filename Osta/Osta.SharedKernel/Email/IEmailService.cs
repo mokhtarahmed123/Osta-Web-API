@@ -1,4 +1,4 @@
-﻿using Osta.Notification.DTOs;
+﻿using Osta.SharedKernel.dto;
 
 namespace Osta.Notification.Interfaces
 {

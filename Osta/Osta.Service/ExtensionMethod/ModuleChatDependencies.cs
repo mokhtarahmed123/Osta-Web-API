@@ -3,25 +3,24 @@ using Osta.Chat.MessageService;
 using Osta.Chat.Service;
 using Osta.Infrastructure.ChatService;
 
-namespace Osta.Service.ExtensionMethod
+namespace Osta.Service.ExtensionMethod;
+public static class ModuleChatDependencies
 {
-    public static class ModuleChatDependencies
+    public static IServiceCollection AddChatDependencies(this IServiceCollection services)
     {
-        public static IServiceCollection AddChatDependencies(this IServiceCollection services)
-        {
-            services.AddSignalR();
-            #region Chat
+        services.AddSignalR();
+        #region Chat
 
-            services.AddScoped<IChatNotifier, SignalRChatNotifier>();
-            services.AddScoped<IMessageService, MessageService>();
+        services.AddScoped<IChatNotifier, SignalRChatNotifier>();
+        services.AddScoped<IMessageService, MessageService>();
 
 
 
-            #endregion
+        #endregion
 
-            return services;
-        }
-
-
+        return services;
     }
+
+
 }
+

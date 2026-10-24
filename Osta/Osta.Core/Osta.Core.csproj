@@ -11,6 +11,7 @@
     <ProjectReference Include="..\Osta.Booking\Osta.Booking.csproj" />
     <ProjectReference Include="..\Osta.Chat\Osta.Chat.csproj" />
     <ProjectReference Include="..\Osta.Identity\Osta.Identity.csproj" />
+    <ProjectReference Include="..\Osta.Notification\Osta.Notification.csproj" />
     <ProjectReference Include="..\Osta.Payment\Osta.Payment.csproj" />
   </ItemGroup>
 

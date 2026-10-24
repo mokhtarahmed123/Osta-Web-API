@@ -13,5 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Osta.Notification\Osta.Notification.csproj" />
+    <ProjectReference Include="..\Osta.SharedKernel\Osta.SharedKernel.csproj" />
   </ItemGroup>
 </Project>

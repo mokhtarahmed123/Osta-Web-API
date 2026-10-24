@@ -1,5 +1,6 @@
 ﻿using Osta.Notification.DTOs;
 using Osta.Notification.Interfaces;
+using Osta.SharedKernel.dto;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
